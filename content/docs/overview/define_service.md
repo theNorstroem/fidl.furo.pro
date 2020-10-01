@@ -1,8 +1,8 @@
 ---
-weight: 10
-title: "Defining a Type"
+weight: 20
+title: "Defining a Service"
 ---
-# Defining A Message Type
+# Defining A Service
 
 
 ## Specifying Field Types

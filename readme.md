@@ -1,4 +1,4 @@
-#furo FIDL docs
+# furo FIDL docs
 
 **start**
 

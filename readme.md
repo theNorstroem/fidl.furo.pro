@@ -1,3 +1,5 @@
-# hi roger und fan
+#furo FIDL docs
 
-das theme ist als submodule drinnen 
+**start**
+
+    hugo serve

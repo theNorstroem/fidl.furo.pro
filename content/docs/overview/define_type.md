@@ -9,7 +9,8 @@ Furo types are organized in packages, you can have as many types per package as 
 Lets do a simple example in µSpec and spec and see what the resulting proto will be. 
  
 ## Define the type in µSpec
-In µSpec you can have multiple type definitions per file. 
+The following example is a complete type definition. You can use every type from your specs and installed
+dependencies. You do not need to import them. The imports are resolved and checked by the spectools when you translate your µSecs to standard specs with the command `spectools muSpec2spec`. 
 
 *File: muspec/auth/auth.types.yaml*    
 ```yaml
@@ -17,15 +18,17 @@ In µSpec you can have multiple type definitions per file.
   fields:
     password: '* string:1 #The password.'
     username: '* string:2 #The username or email, or something to identify.'
-    second_factor: 'string:3 #A second factor like TOTP.'
-  target: auth.proto # this is "optional", if you omit this, the spectools will use the package name (auth)  
+    second_factor: 'string:3 #A second factor like TOTP.'  
 ```
 
-If you are interested in the anatomy of a µSpec, [read more here](/docs/µSpecs/types/) 
+It helps a lot to know the anatomy of a µSpec, [read more here](/docs/µSpecs/types/) 
 
 
-## Define the type in spec
+## Define the type in standard spec
+The standard specs have a much higher information density then the µSpecs. 
+The spectools will fill out as much as possible with good defaults by using the `.spectools`  configuration file.
 
+It helps a lot to know the anatomy of a standard spec, [read more here](/docs/specs/types/)
 
 *File: specs/auth/Credentials.type.spec*
 ```yaml
@@ -56,7 +59,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: label.Credentials.password
+            label: auth.Credentials.password.label
             options:
                 flags: []
                 list: []
@@ -141,21 +144,36 @@ message Credentials {
 ```
 
 ## Specifying Field Types
+Use the [scalar value types](https://developers.google.com/protocol-buffers/docs/proto3#scalar) from proto3 or types
+that you have defined or installed.
+
+{{< hint danger >}}
+You have always to write the package name  (**package.Type**) too , when you plan to use the furo client framework, even when you are on the same file.
+{{< /hint >}}
+
+### Packages and Name Resolution
+[Like in protobuf](https://developers.google.com/protocol-buffers/docs/proto3#packages_and_name_resolution) the type 
+name resolution works like C++: first the innermost scope is searched, then the next-innermost, and so on, with each package considered to be "inner" to its parent package. A leading '.' (for example, **.foo.bar.Baz**) means to start from the outermost scope instead.
 
 
-## Assigning Field Numbers
+ 
 
-
-## Specifying Field Rules
-
-
-## Adding More Message Types
-
-
-## Adding Comments
-
+## Field IDs
+The field IDs are also used for the generated protos as [field numbers](https://developers.google.com/protocol-buffers/docs/proto3#assigning_field_numbers). 
 
 ## Reserved Fields
+There is no concept for reserved fields at the moment.
+
+## What's Generated From Your specs?
+
+### protos
+First of all, **protos** and therfore [all you can generate with protos](https://developers.google.com/protocol-buffers/docs/proto3#whats_generated_from_your_proto).
+
+### client environment (es6)
+The client types are also generated.
+
+### furoc
 
 
-## What's Generated From Your .proto?
+## Default Values
+The standard spec let you define a default value. STRING

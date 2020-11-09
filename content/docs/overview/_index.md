@@ -13,3 +13,10 @@ For a better understanding and when possible the **µSpec**, **spec** and the re
 {{< /hint >}}
 
 This is a reference guide – for a step by step example, see the tutorials or sample projects.
+
+## Related Documents
+
+- [Anatomy of a µType spec](/docs/µSpecs/types/)
+- [Anatomy of a µService spec](/docs/µSpecs/services/)
+- [Anatomy of a type spec](/docs/specs/types/)
+- [Anatomy of a service spec](/docs/specs/services/)

@@ -113,6 +113,36 @@ Look at **- name: FruitService** , **- md: 'ListFruits: GET /...**. You can find
         frt: 'string #The query param frt stands for the FRuiT id.'
 ```
 
+### URL Path
+Do **not** append a prefix like */api* to your paths. Use **/fruits**.
+
+{{< hint warning >}}
+TIPP: Assume that your API is a host by its own. So you will address it with **api.xy.com/fruits**. 
+Having *api.xy.com/api/fruits* will look strange in that moment.
+
+Adding prefixes can be done by infrastructure. The furo client libs also have the posibillity to prefix your specs according
+to the situation.
+{{< /hint >}}
+
+{{< hint danger >}}
+You will loose portability capabilities when you prefix your paths. 
+{{< /hint >}}
+
 ### URL Placeholer / Query Params
 Use short names for the placeholders because they will apear on every request you make and also in the HATEOAS of every 
-response
+response. 
+
+Use some consonants only and use them that you can recognize the word behind, when possible. 
+The first letter of a word is allowed to be a vovel.
+
+Main objects of your domain should use only two or three letters. A
+
+{{< hint danger >}}
+**q** is "reserved" for search query.
+{{< /hint >}}
+
+**some examples**
+- fruit => **FRT**
+- example_data => **exd**
+- support_cases **spc**
+- support_analysis **spa**

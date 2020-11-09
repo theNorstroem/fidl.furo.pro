@@ -3,6 +3,7 @@ title: "Types"
 ---
 
 # Anatomy of a type µSpec
+The µType specs are regular yaml files.
 The "type-object" contains of 3 fields. The fields `type`,  `fields` are mandatory, the field `target` is optional.
 
 *File: muspec/sample.types.yaml*
@@ -39,6 +40,57 @@ The "type-object" contains of 3 fields. The fields `type`,  `fields` are mandato
 field name  
 
 ```
-- **type name** is defined by package.Type
-- **auto entity/collection** (ce) write a **c** to autogenerate the collection type and **e** to generate the entity type for this type.
-- **description** It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.
+### type name
+is defined by package.Type
+
+### Auto entity and collection generator
+**(ce)** write a **c** to autogenerate the collection type and/or **e** to generate the entity type for this type.
+
+The spectools can generate specs for entities and collections. Entities and collections are usualy used in services as a response.
+If the generated specs are not suitable enough for you, you always have the possibility to write response by yourself.
+
+The generated specs are optimized for the usage with the furo client framework. Atain, you do not have to use the furo
+client framework to work with furo fidls.
+
+### description
+It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.
+
+## Fields
+
+In the "fields-object", what a surprise, you define the fields / attributes of a type.
+
+```yaml
+fieldname: '* string:2 #The description.'
+!_______!  !_!!____!!_!!________________!
+    |       |    |   |          |  
+    |       |    |   |  description (recomended) begins with a #
+ field name |    |   |   
+            |    |  field id, indicated by a :   
+            |    |  
+            |   type  
+            |     
+       Indicator for required (*), readonly (-), repeated ([])
+
+```
+
+### fieldname
+The name of the field
+
+### indicator required
+If the field is required, type in a *
+
+### indicator readonly
+If the field is readonly, type in a -
+
+### indicator repeated
+If the field is repeated, type in a []
+
+### type
+Types are the same like in protobuf
+
+### field id
+The field id must be unique, the generated protos use them too
+
+### description
+It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.
+

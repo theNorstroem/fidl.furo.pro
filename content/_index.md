@@ -23,7 +23,7 @@ The **F**uro **I**nterface **D**efinition **L**anguage
 Furo IDL is a interface definition language with a lot of output formats. 
 The outputs can vary from [protobuf](https://developers.google.com/protocol-buffers), UI components, open api, client code, server code, 
 documentations and much more. 
-There is a short notation form (µSpecs) and the default notation form. You can use the **same** defined types and services on servers and browsers.
+There is a short notation form [(µSpecs)](/docs/µSpecs/) and the standard notation form [(specs)](/docs/specs/). You can use the **same** defined types and services on servers and browsers.
 <--->
 
 ## How do i start?

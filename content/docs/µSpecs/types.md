@@ -1,10 +1,14 @@
 ---
 title: "Types"
+weight: 10
 ---
 
 # Anatomy of a type µSpec
 The µType specs are regular yaml files.
 The "type-object" contains of 3 fields. The fields `type`,  `fields` are mandatory, the field `target` is optional.
+
+
+
 
 *File: muspec/sample.types.yaml*
 ```yaml

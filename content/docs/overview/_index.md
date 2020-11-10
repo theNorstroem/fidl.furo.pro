@@ -21,8 +21,6 @@ This is a reference guide – for a step by step example, see the tutorials or s
 - [Anatomy of a type spec](/docs/specs/types/)
 - [Anatomy of a service spec](/docs/specs/services/)
 
-
-
 ## What's Generated From Your specs?
 
 ### protos
@@ -39,12 +37,17 @@ This module allows the usage of the same types on the backend side and in the br
 
 - `spectools genEsModule` - generate es6 spec module
 
+### Validators, DB Shemas, Custom Documentation,...
+With [furoc](https://github.com/theNorstroem/furoc), which has a lot of similarities with protoc, you can easyli write your 
+custom generators. The main benefit is that you have a much higher information density then you have with the protos alone (to be fair, you can have the same information density with protos too, but this is not so trivial).
+The input format for a furoc generator is a yaml structure with your services and types. The output format is the same like in protoc. 
+
 ### User Interface Components
 Yes, you have read it correctly. You can generate web-components that you can use in your web projects. At the moment you can
 do that with [@furo/ui-builder](https://github.com/theNorstroem/FuroBaseComponents/tree/master/packages/furo-ui-builder).
 A [furoc](https://github.com/theNorstroem/furoc) based version is in development and comming soon.
 
-### REST API *indirect*
+### REST APIs *indirect*
 This is done by using the protos with [protoc-gen-grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway).
 
 ```bash
@@ -55,8 +58,10 @@ This is done by using the protos with [protoc-gen-grpc-gateway](https://github.c
      your/service/v1/your_service.proto
 ```
 
-### Open Api (swagger )Documentation *indirect*
-This done by using the generated protos with [protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway).
+### Open Api Specifications *indirect*
+[Open Api aka swagger](https://swagger.io/) can be used for various things.
+
+Generating Open Api Specifications is done by using the generated protos with [protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway).
 
 ```bash
 protoc -I . --openapiv2_out ./gen/openapiv2 --openapiv2_opt logtostderr=true your/service/v1/your_service.proto
@@ -66,5 +71,24 @@ protoc -I . --openapiv2_out ./gen/openapiv2 --openapiv2_opt logtostderr=true you
 By using the swagger files on [https://editor.swagger.io/](https://editor.swagger.io/) you can generate server and client
 code for different languages and architectures. You do not have to write the backend as grpc service to work with the furo client framework.
 
-## furoc
 
+## Importing proto Messages
+You can import your existing proto messages with the [protoc-gen-furo-specs](https://github.com/theNorstroem/protoc-gen-furo-specs) protoc plugin.
+After running the spectools, you should receive the same proto file (proto3).
+
+## furoc
+[Furoc](https://github.com/theNorstroem/furoc) is the compiler/transpiler for the specs.
+
+Furoc will pass a yaml structure with the current config of the spec project, the types, the services, the installed types (dependencies) and the installed services (dependencies) to the generators.
+
+
+## Good to Read
+
+### [API Design Guide from google
+The [API Design Guide](https://cloud.google.com/apis/design) from google gives you a good guideline for designing your APIs.
+
+### Protocol Buffers
+This page gives you a good overview on [Protocol Buffers](https://developers.google.com/protocol-buffers).
+
+### gRPC
+This site [grpc.io](https://grpc.io/) gives you a good entry point to grpc itself.

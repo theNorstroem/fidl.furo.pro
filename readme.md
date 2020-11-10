@@ -1,7 +1,7 @@
 # furo FIDL docs
 
-**start**
+This is the repo for the documentation itself. 
 
-    hugo serve
+Feel free to fill an issue or pull request to improove the documentation.
 
-
+Maybe you are more interested in the [spectools](https://github.com/theNorstroem/spectools).

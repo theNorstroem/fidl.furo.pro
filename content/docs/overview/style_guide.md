@@ -114,6 +114,7 @@ Look at **- name: FruitService** , **- md: 'ListFruits: GET /...**. You can find
 ```
 
 ### URL Path
+Usualy the path part is a noun in plural form. Use singular nouns only on singleton ressources.
 Do **not** append a prefix like */api* to your paths. Use **/fruits**.
 
 {{< hint warning >}}

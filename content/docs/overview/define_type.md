@@ -164,16 +164,7 @@ The field IDs are also used for the generated protos as [field numbers](https://
 ## Reserved Fields
 There is no concept for reserved fields at the moment.
 
-## What's Generated From Your specs?
-
-### protos
-First of all, **protos** and therfore [all you can generate with protos](https://developers.google.com/protocol-buffers/docs/proto3#whats_generated_from_your_proto).
-
-### client environment (es6)
-The client types are also generated.
-
-### furoc
-
 
 ## Default Values
 The standard spec let you define a default value. STRING
+

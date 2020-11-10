@@ -20,3 +20,51 @@ This is a reference guide – for a step by step example, see the tutorials or s
 - [Anatomy of a µService spec](/docs/µSpecs/services/)
 - [Anatomy of a type spec](/docs/specs/types/)
 - [Anatomy of a service spec](/docs/specs/services/)
+
+
+
+## What's Generated From Your specs?
+
+### protos
+First of all, **protos** and therfore [all you can generate with protos](https://developers.google.com/protocol-buffers/docs/proto3#whats_generated_from_your_proto).
+
+This is done by spectools with the following commands.
+
+- `spectools genMessageProtos` - Generate the message protos from the type specs.
+- `spectools genServiceProtos` - Generate service protos from the specs
+
+### client environment (es6)
+The client types as es6 module which can be consumed by [@furo/furo-data*](https://components.furo.pro/?t=furo-data) and various web components of furo.
+This module allows the usage of the same types on the backend side and in the browser.
+
+- `spectools genEsModule` - generate es6 spec module
+
+### User Interface Components
+Yes, you have read it correctly. You can generate web-components that you can use in your web projects. At the moment you can
+do that with [@furo/ui-builder](https://github.com/theNorstroem/FuroBaseComponents/tree/master/packages/furo-ui-builder).
+A [furoc](https://github.com/theNorstroem/furoc) based version is in development and comming soon.
+
+### REST API *indirect*
+This is done by using the protos with [protoc-gen-grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway).
+
+```bash
+ protoc -I . --grpc-gateway_out ./gen/go \
+     --grpc-gateway_opt logtostderr=true \
+     --grpc-gateway_opt paths=source_relative \
+     --grpc-gateway_opt grpc_api_configuration=path/to/config.yaml \
+     your/service/v1/your_service.proto
+```
+
+### Open Api (swagger )Documentation *indirect*
+This done by using the generated protos with [protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway).
+
+```bash
+protoc -I . --openapiv2_out ./gen/openapiv2 --openapiv2_opt logtostderr=true your/service/v1/your_service.proto
+```
+
+### Various Clients and Servers *indirect*
+By using the swagger files on [https://editor.swagger.io/](https://editor.swagger.io/) you can generate server and client
+code for different languages and architectures. You do not have to write the backend as grpc service to work with the furo client framework.
+
+## furoc
+

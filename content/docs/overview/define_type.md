@@ -165,6 +165,4 @@ The field IDs are also used for the generated protos as [field numbers](https://
 There is no concept for reserved fields at the moment.
 
 
-## Default Values
-The standard spec let you define a default value. STRING
 

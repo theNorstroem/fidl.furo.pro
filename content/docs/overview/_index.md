@@ -8,18 +8,20 @@ title: "Overview"
 This guide describes how to use the specs, including *.service.spec, *.type.spec file syntax.
 
 {{< hint info >}}
-We will switch the used notation in this documentation, the µSpec notation is used when it makes no difference or it is easier to use. 
+We will use µSpec notation when it makes no difference or it is easier to use.
+
+The standard notation is then used when the µSpec notation does not cover the feature.
+
 For a better understanding and when possible the **µSpec**, **spec** and the resulting **proto** will be shown.
 {{< /hint >}}
 
 This is a reference guide – for a step by step example, see the tutorials or sample projects.
 
-## Related Documents
+The pages [Defining a type](/docs/overview/define_type/) , [Defining a service](/docs/overview/define_type/) and [Style Guide](/docs/overview/style_guide/) should give you enough information for a brief overview. 
+Most of the other pages are detailed topics and can be read later or by interest or need.
 
-- [Anatomy of a µType spec](/docs/µSpecs/types/)
-- [Anatomy of a µService spec](/docs/µSpecs/services/)
-- [Anatomy of a type spec](/docs/specs/types/)
-- [Anatomy of a service spec](/docs/specs/services/)
+For the tooling, the minimum you need is [spectools](https://github.com/theNorstroem/spectools/blob/master/doc/spectools.md). If your `.spectools` config have specified additional  commands and flows, make sure you install the corresponding dependencies too.
+
 
 ## What's Generated From Your specs?
 
@@ -81,6 +83,13 @@ After running the spectools, you should receive the same proto file (proto3).
 
 Furoc will pass a yaml structure with the current config of the spec project, the types, the services, the installed types (dependencies) and the installed services (dependencies) to the generators.
 
+
+## Related Documents
+
+- [Anatomy of a µType spec](/docs/µSpecs/types/)
+- [Anatomy of a µService spec](/docs/µSpecs/services/)
+- [Anatomy of a type spec](/docs/specs/types/)
+- [Anatomy of a service spec](/docs/specs/services/)
 
 ## Good to Read
 

@@ -142,7 +142,7 @@ Main objects of your domain should use only two or three letters. A
 {{< /hint >}}
 
 **some examples**
-- fruit => **FRT**
+- fruit => **frt**
 - example_data => **exd**
 - support_cases **spc**
 - support_analysis **spa**

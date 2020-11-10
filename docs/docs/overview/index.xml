@@ -23,7 +23,7 @@ Define the type in µSpec #  The following example is a complete type definition
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/overview/define_service/</guid>
-      <description>Defining A Service #  Specifying Field Types #  Assigning Field Numbers #  Specifying Field Rules #  Adding More Message Types #  Adding Comments #  Reserved Fields #  What&amp;rsquo;s Generated From Your .proto? #  </description>
+      <description>Defining A Service #  </description>
     </item>
     
     <item>

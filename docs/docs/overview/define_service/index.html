@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Defining A Service #  Specifying Field Types #  Assigning Field Numbers #  Specifying Field Rules #  Adding More Message Types #  Adding Comments #  Reserved Fields #  What&rsquo;s Generated From Your .proto? #  ">
+<meta name="description" content="Defining A Service #  ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Defining a Service" />
-<meta property="og:description" content="Defining A Service #  Specifying Field Types #  Assigning Field Numbers #  Specifying Field Rules #  Adding More Message Types #  Adding Comments #  Reserved Fields #  What&rsquo;s Generated From Your .proto? #  " />
+<meta property="og:description" content="Defining A Service #  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.docs.furo.pro/docs/overview/define_service/" />
-<meta property="article:modified_time" content="2020-10-01T12:47:55+02:00" />
+<meta property="article:modified_time" content="2020-11-10T22:28:10+01:00" />
 <title>Defining a Service | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.ffb473346a01cae3a1640cc4eefaa97b6e9dde1ba6e79f759b9b34381c3f72fb.js" integrity="sha256-/7RzNGoByuOhZAzE7vqpe26d3hum5591m5s0OBw/cvs="></script>
+<script defer src="/en.search.min.4addb9bf0fa52085439fca614ca600bc34a00954a08b0a9060556518f6b36844.js" integrity="sha256-St25vw&#43;lIIVDn8phTKYAvDSgCVSgiwqQYFVlGPazaEQ="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -424,17 +424,7 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#defining-a-service">Defining A Service</a>
-      <ul>
-        <li><a href="#specifying-field-types">Specifying Field Types</a></li>
-        <li><a href="#assigning-field-numbers">Assigning Field Numbers</a></li>
-        <li><a href="#specifying-field-rules">Specifying Field Rules</a></li>
-        <li><a href="#adding-more-message-types">Adding More Message Types</a></li>
-        <li><a href="#adding-comments">Adding Comments</a></li>
-        <li><a href="#reserved-fields">Reserved Fields</a></li>
-        <li><a href="#whats-generated-from-your-proto">What&rsquo;s Generated From Your .proto?</a></li>
-      </ul>
-    </li>
+    <li><a href="#defining-a-service">Defining A Service</a></li>
   </ul>
 </nav>
 
@@ -450,34 +440,6 @@ https://github.com/alex-shpak/hugo-book
   Defining A Service
   <a class="anchor" href="#defining-a-service">#</a>
 </h1>
-<h2 id="specifying-field-types">
-  Specifying Field Types
-  <a class="anchor" href="#specifying-field-types">#</a>
-</h2>
-<h2 id="assigning-field-numbers">
-  Assigning Field Numbers
-  <a class="anchor" href="#assigning-field-numbers">#</a>
-</h2>
-<h2 id="specifying-field-rules">
-  Specifying Field Rules
-  <a class="anchor" href="#specifying-field-rules">#</a>
-</h2>
-<h2 id="adding-more-message-types">
-  Adding More Message Types
-  <a class="anchor" href="#adding-more-message-types">#</a>
-</h2>
-<h2 id="adding-comments">
-  Adding Comments
-  <a class="anchor" href="#adding-comments">#</a>
-</h2>
-<h2 id="reserved-fields">
-  Reserved Fields
-  <a class="anchor" href="#reserved-fields">#</a>
-</h2>
-<h2 id="whats-generated-from-your-proto">
-  What&rsquo;s Generated From Your .proto?
-  <a class="anchor" href="#whats-generated-from-your-proto">#</a>
-</h2>
 </article>
  
       
@@ -488,9 +450,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/fidl-docs/commit/3acd1ce58734d727433faf9f11a19a845e5ff622" title='Last modified by veith | October 1, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/fidl-docs/commit/57623433dc9b756d1a659e690ba1601b28f933d0" title='Last modified by veith | November 10, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>October 1, 2020</span>
+      <span>November 10, 2020</span>
     </a>
   </div>
 
@@ -518,17 +480,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#defining-a-service">Defining A Service</a>
-      <ul>
-        <li><a href="#specifying-field-types">Specifying Field Types</a></li>
-        <li><a href="#assigning-field-numbers">Assigning Field Numbers</a></li>
-        <li><a href="#specifying-field-rules">Specifying Field Rules</a></li>
-        <li><a href="#adding-more-message-types">Adding More Message Types</a></li>
-        <li><a href="#adding-comments">Adding Comments</a></li>
-        <li><a href="#reserved-fields">Reserved Fields</a></li>
-        <li><a href="#whats-generated-from-your-proto">What&rsquo;s Generated From Your .proto?</a></li>
-      </ul>
-    </li>
+    <li><a href="#defining-a-service">Defining A Service</a></li>
   </ul>
 </nav>
 

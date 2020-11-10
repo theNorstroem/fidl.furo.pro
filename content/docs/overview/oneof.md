@@ -60,7 +60,7 @@ fields:
 ```
 
 The resulting proto would be like:
-```protobuf
+```proto
 
 // Wire hooks to connect internal wires with methods.
 message WireHook {  

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Specs on フロー FIDL</title>
-    <link>http://example.org/docs/specs/</link>
+    <link>http://fidl.docs.furo.pro/docs/specs/</link>
     <description>Recent content in Specs on フロー FIDL</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/docs/specs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://fidl.docs.furo.pro/docs/specs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Types</title>
-      <link>http://example.org/docs/specs/types/</link>
+      <link>http://fidl.docs.furo.pro/docs/specs/types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/specs/types/</guid>
+      <guid>http://fidl.docs.furo.pro/docs/specs/types/</guid>
       <description>Anatomy of a type µSpec #  </description>
     </item>
     
     <item>
       <title>Services</title>
-      <link>http://example.org/docs/specs/services/</link>
+      <link>http://fidl.docs.furo.pro/docs/specs/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/specs/services/</guid>
+      <guid>http://fidl.docs.furo.pro/docs/specs/services/</guid>
       <description>Anatomy of a service µSpec #  </description>
     </item>
     

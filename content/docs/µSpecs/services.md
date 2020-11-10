@@ -117,9 +117,10 @@ This will add the missing query params to your spec with a default description.
     q: 'string #Use this to search for a fruit.'
     ^  !_____! !______________________________!
     |     |                |
-    |    type           description
+    |    type           description   
     |
    the name of the query param
+
 ```
 
 ### The Query Param Name
@@ -133,3 +134,4 @@ The type is mostly a string. You can use any type which is url safe.
 Ceterum censeo, descriptions are useful information.
 
 ## Custom Methods in Detail
+todo: write something about that.

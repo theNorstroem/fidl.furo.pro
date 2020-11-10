@@ -1,0 +1,1 @@
+if(navigator.serviceWorker){navigator.serviceWorker.register("/fidl.furo.pro/sw.js",{scope:"/fidl.furo.pro/"});}

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://fidl.docs.furo.pro/docs/tools/BEC/</loc>
+    <lastmod>2020-11-11T20:10:09+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fidl.docs.furo.pro/docs/overview/</loc>
     <lastmod>2020-11-10T12:47:40+01:00</lastmod>
   </url>
@@ -23,7 +28,7 @@
   
   <url>
     <loc>http://fidl.docs.furo.pro/docs/specs/types/</loc>
-    <lastmod>2020-11-11T12:04:42+01:00</lastmod>
+    <lastmod>2020-11-11T20:10:09+01:00</lastmod>
   </url>
   
   <url>
@@ -91,6 +96,16 @@
   </url>
   
   <url>
+    <loc>http://fidl.docs.furo.pro/docs/</loc>
+    <lastmod>2020-11-11T20:10:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fidl.docs.furo.pro/docs/tools/</loc>
+    <lastmod>2020-11-11T20:10:09+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fidl.docs.furo.pro/tags/FIDL/</loc>
     <lastmod>2020-11-10T21:30:22+01:00</lastmod>
   </url>
@@ -112,11 +127,6 @@
   
   <url>
     <loc>http://fidl.docs.furo.pro/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://fidl.docs.furo.pro/docs/</loc>
-    <lastmod>2020-11-11T12:04:42+01:00</lastmod>
   </url>
   
   <url>

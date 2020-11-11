@@ -2,6 +2,7 @@
 title: Introduction
 type: docs
 bookToc: false
+description: フロー Furo FIDL, the **F**uro **I**nterface **D**efinition **L**anguage 
 ---
 
 # フロー Furo FIDL

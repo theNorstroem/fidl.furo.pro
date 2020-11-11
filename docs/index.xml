@@ -23,7 +23,7 @@ Define the type in µSpec #  The following example is a complete type definition
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/specs/types/</guid>
-      <description>Anatomy of a type µSpec #  </description>
+      <description>Anatomy of a type spec #  </description>
     </item>
     
     <item>
@@ -86,7 +86,9 @@ By using types which are not installed in the dependencies or not from your spec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/overview/enums/</guid>
-      <description>Enumerations #   Enums are not supported in spectools at the moment.</description>
+      <description>Enumerations #  Enums are not covered in spectools at the moment.
+Check this issue for details/dates/state.
+ </description>
     </item>
     
     <item>
@@ -169,7 +171,7 @@ You can put the services and types to the same folder (thematic group). You can 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/specs/services/</guid>
-      <description>Anatomy of a service µSpec #  </description>
+      <description>Anatomy of a service spec #  </description>
     </item>
     
     <item>

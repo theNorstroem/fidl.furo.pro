@@ -45,7 +45,9 @@ File: muspec/sample.types.yaml
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/overview/define_service/</guid>
-      <description>Defining A Service #  </description>
+      <description>Defining A Service #  Furo services are organized in packages. They can use all types that you have defined in your project or are installed as dependencies.
+Lets do a simple example in µSpec and spec and see what the resulting proto will be.
+Define the service in µSpec #  The following example is a complete service definition. You can use every type from your specs and installed dependencies.</description>
     </item>
     
     <item>

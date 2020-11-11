@@ -55,4 +55,3 @@ The regular specs are more expressive. You can also extend them with additional 
 When you already know protobuf, you will find some similarities in the specs.
 
 
-

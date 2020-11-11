@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "フロー FIDL"
 theme = ["book"]
 
+# (Optional) Set Google Analytics if you use it to track your website.
+# googleAnalytics = "G-9RXJYQ94NB"
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -116,3 +118,5 @@ enableGitInfo = true
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
   BookServiceWorker = false
+
+

@@ -3,4 +3,4 @@ title: "Types"
 weight: 10
 ---
 
-# Anatomy of a type µSpec
+# Anatomy of a type spec

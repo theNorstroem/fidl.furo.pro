@@ -2,4 +2,4 @@
 title: "Services"
 ---
 
-# Anatomy of a service µSpec
+# Anatomy of a service spec

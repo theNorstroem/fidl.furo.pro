@@ -5,4 +5,9 @@ title: "Enumerations"
 ---
 # Enumerations
 
-[Enums are not supported in spectools at the moment.](https://github.com/theNorstroem/spectools/issues/1)
+
+{{< hint danger >}}
+Enums are not covered in spectools at the moment.
+
+[Check this issue for details/dates/state](https://github.com/theNorstroem/spectools/issues/1).
+{{< /hint >}}

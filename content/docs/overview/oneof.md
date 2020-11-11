@@ -10,7 +10,7 @@ In the client lib, at most one field can be set at the same time.
 Setting any member of the oneof automatically clears all the other members. 
 
 
-{{< hint danger >}}
+{{< hint warning >}}
 The oneof feature is **not** available **µSpec**. You have to specify them in the spec. 
 {{< /hint >}}
 

@@ -18,7 +18,7 @@ type #  The type of the field without the package name. Write it in CamelCase wi
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.30469a0bca4cf9d34768f1bad9cca01d63cbdd047ff5403763896ed45284f8df.js" integrity="sha256-MEaaC8pM&#43;dNHaPG62cygHWPL3QR/9UA3Y4lu1FKE&#43;N8="></script>
+<script defer src="/en.search.min.3965b863053d68806b25e1675a2b13d8a59b34f8bb61d2249d078dadf32072f2.js" integrity="sha256-OWW4YwU9aIBrJeFnWisT2KWbNPi7YdIknQeNrfMgcvI="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -432,10 +432,19 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#type">type</a></li>
         <li><a href="#__proto">__proto</a>
           <ul>
-            <li><a href="#field-package">Field <code>package</code></a></li>
-            <li><a href="#field-targetfile">Field <code>targetfile</code></a></li>
-            <li><a href="#imports">imports</a></li>
-            <li><a href="#options">options</a></li>
+            <li><a href="#field-package-string">Field <code>package</code> <em>string</em></a></li>
+            <li><a href="#field-targetfile-string">Field <code>targetfile</code> <em>string</em></a></li>
+            <li><a href="#field-imports-string">Field <code>imports</code> <em>[]string</em></a></li>
+          </ul>
+        </li>
+        <li><a href="#fields-mapstring-field">Fields *map&lt;string, Field&gt;</a>
+          <ul>
+            <li><a href="#field-type-string">Field <code>type</code> <em>string</em></a></li>
+            <li><a href="#field-description-string">Field <code>description</code> <em>string</em></a></li>
+            <li><a href="#field-meta-meta">Field <code>meta</code> <em>Meta</em></a></li>
+            <li><a href="#field-constraints-mapstring-constraint">Field <code>constraints</code> <em>map&lt;string, Constraint&gt;</em></a></li>
+            <li><a href="#field-__proto-fieldproto">Field <code>__proto:</code> <em>Fieldproto</em></a></li>
+            <li><a href="#field-__ui-uiprops">Field <code>__ui:</code> <em>Uiprops</em></a></li>
           </ul>
         </li>
       </ul>
@@ -480,9 +489,9 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">AuthProto</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.baseauth</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="field-package">
-  Field <code>package</code>
-  <a class="anchor" href="#field-package">#</a>
+</span></code></pre></div><h3 id="field-package-string">
+  Field <code>package</code> <em>string</em>
+  <a class="anchor" href="#field-package-string">#</a>
 </h3>
 <p>This is the desired proto package name.</p>
 <p>In proto this is optional, in specs this field is <strong>not optional</strong></p>
@@ -491,21 +500,90 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 <p>
   <a href="https://developers.google.com/protocol-buffers/docs/proto3#packages">Learn more about packages in protobuf</a></p>
-<h3 id="field-targetfile">
-  Field <code>targetfile</code>
-  <a class="anchor" href="#field-targetfile">#</a>
+<h3 id="field-targetfile-string">
+  Field <code>targetfile</code> <em>string</em>
+  <a class="anchor" href="#field-targetfile-string">#</a>
 </h3>
 <p>The name of the proto file. Multiple types can write to the same file, if they belong to the same package.
 The file will be generated in a folder according to the package.</p>
 <p>A package <code>company.groups</code> with a protofile <code>green.proto</code> and a config target <code>dist/proto</code> will be generated to</p>
 <p><code>dist/proto/company/groups/green.proto</code></p>
-<h3 id="imports">
-  imports
-  <a class="anchor" href="#imports">#</a>
+<h3 id="field-imports-string">
+  Field <code>imports</code> <em>[]string</em>
+  <a class="anchor" href="#field-imports-string">#</a>
 </h3>
-<h3 id="options">
-  options
-  <a class="anchor" href="#options">#</a>
+<p>Add imports by hand only if you do not work with the spectools chain. Spectools will check and fix imports for you.</p>
+<p>This can be done with the command <code>spectools checkImports</code>. Imports that can not be found would be reported.</p>
+<p>Imports that are not needed anymore, are removed too.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">imports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">google/type/date.proto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">google/type/timeofday.proto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><pre><code>### field options *map&lt;string.string&gt;*
+</code></pre>
+<p>When needed, you can add options for your protos. This can be something like the following:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/auth;authpb</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">AuthProto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.baseauth</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><blockquote class="book-hint danger">
+  <p><strong>Potential pitfall:</strong>
+The value of an option is a string, so write values which should have true as value like this:</p>
+<p><code>java_multiple_files: &quot;true&quot;</code></p>
+<p>When you write true not as string, the value will not work.</p>
+
+</blockquote>
+
+<h2 id="fields-mapstring-field">
+  Fields *map&lt;string, Field&gt;
+  <a class="anchor" href="#fields-mapstring-field">#</a>
+</h2>
+<p>The most important part of a type spec are the fields. The fields section contains a map with fields. A field itself
+has the properties <code>type</code>, <code>description</code>, <code>meta</code>, <code>constraints</code>, <code>__ui</code> and <code>__proto</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">password</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">The password.</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">__proto</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">number</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">oneof</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">__ui</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">null</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">meta</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">default</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">hint</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">label</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">auth.Credentials.password.label</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span><span style="color:#204a87;font-weight:bold">flags</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span><span style="color:#204a87;font-weight:bold">list</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">readonly</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">false</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">repeated</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">false</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">typespecific</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">null</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">constraints</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">required</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span><span style="color:#204a87;font-weight:bold">is</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span><span style="color:#204a87;font-weight:bold">message</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">password is required</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="field-type-string">
+  Field <code>type</code> <em>string</em>
+  <a class="anchor" href="#field-type-string">#</a>
+</h3>
+<h3 id="field-description-string">
+  Field <code>description</code> <em>string</em>
+  <a class="anchor" href="#field-description-string">#</a>
+</h3>
+<h3 id="field-meta-meta">
+  Field <code>meta</code> <em>Meta</em>
+  <a class="anchor" href="#field-meta-meta">#</a>
+</h3>
+<h3 id="field-constraints-mapstring-constraint">
+  Field <code>constraints</code> <em>map&lt;string, Constraint&gt;</em>
+  <a class="anchor" href="#field-constraints-mapstring-constraint">#</a>
+</h3>
+<h3 id="field-__proto-fieldproto">
+  Field <code>__proto:</code> <em>Fieldproto</em>
+  <a class="anchor" href="#field-__proto-fieldproto">#</a>
+</h3>
+<h3 id="field-__ui-uiprops">
+  Field <code>__ui:</code> <em>Uiprops</em>
+  <a class="anchor" href="#field-__ui-uiprops">#</a>
 </h3>
 </article>
  
@@ -553,10 +631,19 @@ The file will be generated in a folder according to the package.</p>
         <li><a href="#type">type</a></li>
         <li><a href="#__proto">__proto</a>
           <ul>
-            <li><a href="#field-package">Field <code>package</code></a></li>
-            <li><a href="#field-targetfile">Field <code>targetfile</code></a></li>
-            <li><a href="#imports">imports</a></li>
-            <li><a href="#options">options</a></li>
+            <li><a href="#field-package-string">Field <code>package</code> <em>string</em></a></li>
+            <li><a href="#field-targetfile-string">Field <code>targetfile</code> <em>string</em></a></li>
+            <li><a href="#field-imports-string">Field <code>imports</code> <em>[]string</em></a></li>
+          </ul>
+        </li>
+        <li><a href="#fields-mapstring-field">Fields *map&lt;string, Field&gt;</a>
+          <ul>
+            <li><a href="#field-type-string">Field <code>type</code> <em>string</em></a></li>
+            <li><a href="#field-description-string">Field <code>description</code> <em>string</em></a></li>
+            <li><a href="#field-meta-meta">Field <code>meta</code> <em>Meta</em></a></li>
+            <li><a href="#field-constraints-mapstring-constraint">Field <code>constraints</code> <em>map&lt;string, Constraint&gt;</em></a></li>
+            <li><a href="#field-__proto-fieldproto">Field <code>__proto:</code> <em>Fieldproto</em></a></li>
+            <li><a href="#field-__ui-uiprops">Field <code>__ui:</code> <em>Uiprops</em></a></li>
           </ul>
         </li>
       </ul>

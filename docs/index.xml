@@ -23,7 +23,9 @@ Define the type in µSpec #  The following example is a complete type definition
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://fidl.docs.furo.pro/docs/specs/types/</guid>
-      <description>Anatomy of a type spec #  </description>
+      <description>Anatomy of a type spec #  A type spec consists of 2 main sections (fields and __proto) and some properties on the root.
+name #  This property is deprecated. Fill in the same as you fill in on the property type for compatibility with some old generators.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.</description>
     </item>
     
     <item>

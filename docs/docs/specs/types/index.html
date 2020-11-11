@@ -4,9 +4,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anatomy of a type spec #  ">
+<meta name="description" content="Anatomy of a type spec #  A type spec consists of 2 main sections (fields and __proto) and some properties on the root.
+name #  This property is deprecated. Fill in the same as you fill in on the property type for compatibility with some old generators.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Types" />
-<meta property="og:description" content="Anatomy of a type spec #  " />
+<meta property="og:description" content="Anatomy of a type spec #  A type spec consists of 2 main sections (fields and __proto) and some properties on the root.
+name #  This property is deprecated. Fill in the same as you fill in on the property type for compatibility with some old generators.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.docs.furo.pro/docs/specs/types/" />
 <meta property="article:modified_time" content="2020-11-11T12:04:42+01:00" />
@@ -14,7 +18,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.634a129aaa46363fc8fc825f96b3709bf57c503009f05939ec771dbb4f569047.js" integrity="sha256-Y0oSmqpGNj/I/IJflrNwm/V8UDAJ8Fk57Hcdu09WkEc="></script>
+<script defer src="/en.search.min.30469a0bca4cf9d34768f1bad9cca01d63cbdd047ff5403763896ed45284f8df.js" integrity="sha256-MEaaC8pM&#43;dNHaPG62cygHWPL3QR/9UA3Y4lu1FKE&#43;N8="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -422,7 +426,20 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a></li>
+    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#type">type</a></li>
+        <li><a href="#__proto">__proto</a>
+          <ul>
+            <li><a href="#field-package">Field <code>package</code></a></li>
+            <li><a href="#field-targetfile">Field <code>targetfile</code></a></li>
+            <li><a href="#imports">imports</a></li>
+            <li><a href="#options">options</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -438,6 +455,58 @@ https://github.com/alex-shpak/hugo-book
   Anatomy of a type spec
   <a class="anchor" href="#anatomy-of-a-type-spec">#</a>
 </h1>
+<p>A type spec consists of 2 main sections (fields and __proto) and some properties on the root.</p>
+<h2 id="name">
+  name
+  <a class="anchor" href="#name">#</a>
+</h2>
+<p>This property is deprecated. Fill in the same as you fill in on the property <code>type</code> for compatibility with some old generators.</p>
+<h2 id="type">
+  type
+  <a class="anchor" href="#type">#</a>
+</h2>
+<p>The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.</p>
+<h2 id="__proto">
+  __proto
+  <a class="anchor" href="#__proto">#</a>
+</h2>
+<p>The proto section defines some properties to generate the proto files.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">__proto</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">auth</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">targetfile</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">auth.proto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">imports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">[]</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/auth;authpb</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">AuthProto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.baseauth</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h3 id="field-package">
+  Field <code>package</code>
+  <a class="anchor" href="#field-package">#</a>
+</h3>
+<p>This is the desired proto package name.</p>
+<p>In proto this is optional, in specs this field is <strong>not optional</strong></p>
+<blockquote>
+<p>You can add an optional package specifier to a .proto file to prevent name clashes between protocol message types.</p>
+</blockquote>
+<p>
+  <a href="https://developers.google.com/protocol-buffers/docs/proto3#packages">Learn more about packages in protobuf</a></p>
+<h3 id="field-targetfile">
+  Field <code>targetfile</code>
+  <a class="anchor" href="#field-targetfile">#</a>
+</h3>
+<p>The name of the proto file. Multiple types can write to the same file, if they belong to the same package.
+The file will be generated in a folder according to the package.</p>
+<p>A package <code>company.groups</code> with a protofile <code>green.proto</code> and a config target <code>dist/proto</code> will be generated to</p>
+<p><code>dist/proto/company/groups/green.proto</code></p>
+<h3 id="imports">
+  imports
+  <a class="anchor" href="#imports">#</a>
+</h3>
+<h3 id="options">
+  options
+  <a class="anchor" href="#options">#</a>
+</h3>
 </article>
  
       
@@ -478,7 +547,20 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a></li>
+    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#type">type</a></li>
+        <li><a href="#__proto">__proto</a>
+          <ul>
+            <li><a href="#field-package">Field <code>package</code></a></li>
+            <li><a href="#field-targetfile">Field <code>targetfile</code></a></li>
+            <li><a href="#imports">imports</a></li>
+            <li><a href="#options">options</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

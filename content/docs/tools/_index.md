@@ -2,7 +2,7 @@
 weight: 30
 title: "Tools"
 date: 2020-11-11T19:37:46+01:00
-
+bookCollapseSection: true
 ---
 # Useful tools to work with the furo FIDLs
 There are a lot of tools, you have at your hand at your fingertips. If you do not want to install them (a lot of work), you can

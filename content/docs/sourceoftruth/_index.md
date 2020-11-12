@@ -1,7 +1,7 @@
 ---
 weight: 40
 title: "Source of Truth"
-bookCollapseSection: true
+# bookCollapseSection: true
 ---
 
 # Source of Truth

@@ -128,7 +128,7 @@ This properties are domain specific and can give instructions for *generators*, 
         list: []
     readonly: false
     repeated: false
-    extensions: {}
+    typespecific: null
 ```
 #### `default` *string*
 The default value for the field when you create a new object. Keep in mind that this is a string and should be parsed by your implementation.
@@ -153,19 +153,42 @@ Define the field as repeated. Keep in mind that not all combinations are possibl
 As an exapmle, if you set *oneof* in __proto, repeated must be set to false. 
 
 #### typespecific: *Anything*
-This is a extension point for fields in types. The name will be changed to extensions and should be repeated.
+**Deprecated**
+
+This is something like a extension point for fields in types. Use the extensionpoint on the field please.
 
 ### Field `constraints` *map<string, Constraint>*
+Static constraints are defined on a per field basis. The client libs would use this information to mark the fields in a form
+which are not valid. This does not mean that you should not check the data on the server side. 
+
+{{< hint warning >}}
+**Side note:**
+
+The constraint may be overwritten by a server response (with `meta.fieldname.constraints:{...}`). 
+{{< /hint >}}
 
 ```yaml
     constraints:
-      required:
-        is: "true"
-        message: password is required
+      required: #<-- constraint
+        is: "true" #<-- value as string
+        message: password is required #<-- message to write on constraint violation
+      max:
+        is: "100"
+        message: not more then 100
+      min:
+        is: "10"
+        message: at least 10
+      step:
+        is: "5"
+        message: incrase by 5 only
 ```
 
-### Field `__proto:` *Fieldproto*
+You have to parse the *is* field according to your type when you want to use the spec directly. The client libs sets the constraints to the according input fields where they are expected as string. So nothing is to do there. If you write extended validators for the client, you have to parse the *is* value too.
 
+### Field `__proto:` *Fieldproto*
+Define the field id (proto number) and set a oneof group if needed. 
+
+[The oneof property in detail](/docs/overview/oneof/) 
 
 ```yaml
     __proto:
@@ -174,3 +197,29 @@ This is a extension point for fields in types. The name will be changed to exten
 ```
 
 ### Field `__ui:` *Uiprops*
+In this property you will define ui relevant attributes of a field. This information is used by some generators.
+The idea behind is that you can give hints for your generators. 
+
+The generator @furo/ui-builder use the component property to 
+generate the input for the field with an explicit component, if this property is not set, it will look for the best matching input component. 
+For a string i.e. a text input will be selected. In the example below we know that we have bigger texts and request a textarea to be used. 
+
+```yaml
+  __ui: {
+    component: furo-data-textarea-input
+    flags: 
+      - full
+    no_init: false  
+```
+
+It depends on your generator what you have to fill in the properties. When your generator requires concrete component names, then you have to 
+write it so. When your generator can handle your "intention" then a flag *big* or *lot* would be all you have to set.
+
+The property `no_init` tells the generator to not build something for this input.
+
+
+{{< hint warning >}}
+**Recomendation:**
+
+When this information is enough for your generators, use it. If you need more flexibility, write your own field-extension.
+{{< /hint >}}

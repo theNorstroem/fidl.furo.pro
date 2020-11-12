@@ -13,12 +13,12 @@ name #  This property is deprecated. Fill in the same as you fill in on the prop
 type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.docs.furo.pro/docs/specs/types/" />
-<meta property="article:modified_time" content="2020-11-12T12:45:15+01:00" />
+<meta property="article:modified_time" content="2020-11-12T18:40:30+01:00" />
 <title>Types | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.e4c892a1460160831a46498226f20af7a9d5634118fe7b6c296705e304b4758f.js" integrity="sha256-5MiSoUYBYIMaRkmCJvIK96nVY0EY/ntsKWcF4wS0dY8="></script>
+<script defer src="/en.search.min.970208f3f03faa81ecae31104a70091b7c12a1f9b4601639c7a6e2d4fb22bcc2.js" integrity="sha256-lwII8/A/qoHsrjEQSnAJG3wSofm0YBY5x6bi1PsivMI="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -492,6 +492,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#field-package-string">Field <code>package</code> <em>string</em></a></li>
             <li><a href="#field-targetfile-string">Field <code>targetfile</code> <em>string</em></a></li>
             <li><a href="#field-imports-string">Field <code>imports</code> <em>[]string</em></a></li>
+            <li><a href="#field-options-mapstring-string">field options <em>map&lt;string, string&gt;</em></a></li>
           </ul>
         </li>
         <li><a href="#fields-mapstring-field">Fields <em>map&lt;string, Field&gt;</em></a>
@@ -575,8 +576,10 @@ The file will be generated in a folder according to the package.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">imports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">google/type/date.proto</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">google/type/timeofday.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><pre><code>### field options *map&lt;string.string&gt;*
-</code></pre>
+</span></code></pre></div><h3 id="field-options-mapstring-string">
+  field options <em>map&lt;string, string&gt;</em>
+  <a class="anchor" href="#field-options-mapstring-string">#</a>
+</h3>
 <p>When needed, you can add options for your protos. This can be something like the following:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/auth;authpb</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -756,7 +759,7 @@ write it so. When your generator can handle your &ldquo;intention&rdquo; then a 
 
 
 
-  <div><a class="flex align-center" href="https://github.com/theNorstroem/fidl-docs/commit/e86854d215d8b5a56ca14bb7f3e9107b95b7e45a" title='Last modified by veith | November 12, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/theNorstroem/fidl-docs/commit/e6e27d0516652fac3d350dfd8f9a9868f03fd8fb" title='Last modified by veith | November 12, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>November 12, 2020</span>
     </a>
@@ -795,6 +798,7 @@ write it so. When your generator can handle your &ldquo;intention&rdquo; then a 
             <li><a href="#field-package-string">Field <code>package</code> <em>string</em></a></li>
             <li><a href="#field-targetfile-string">Field <code>targetfile</code> <em>string</em></a></li>
             <li><a href="#field-imports-string">Field <code>imports</code> <em>[]string</em></a></li>
+            <li><a href="#field-options-mapstring-string">field options <em>map&lt;string, string&gt;</em></a></li>
           </ul>
         </li>
         <li><a href="#fields-mapstring-field">Fields <em>map&lt;string, Field&gt;</em></a>

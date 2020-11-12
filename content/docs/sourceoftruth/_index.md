@@ -5,19 +5,28 @@ title: "Source of Truth"
 ---
 
 # Source of Truth
-The different specification formats can be used as a source or a sink or both of them. 
+The different specification formats can be used as a source or a sink or both of them, but never use sources as source of the specs. 
 
-## Main Flow
 {{< mermaid >}}
 graph LR
 µSpec --> Spec
-Proto --> µSpec
 Spec --> Proto
+Proto --> µSpec
+Spec --> µSpec
 {{< /mermaid >}}
 
-Some transitions will loose information (`Spec --> *`),  some transitions are destructive (`Proto -> µSpec` and `Spec -> Proto`) 
-and some are updating the sinks (`µSpec -> Spec` and `Spec -> µSpec`).
-You should choose **one** source of truth and stick to it.
+Some transitions will loose information 
+- `Spec --> *`
+  
+some transitions are destructive 
+- `Proto -> µSpec`
+- `Spec -> Proto`
+
+and some are updating the sinks 
+- `µSpec -> Spec`
+- `Spec -> µSpec`
+
+You should choose **one** source of truth and stick to it when possible. It is always possible to change.
 
 ### Sources AND Sink
 - Spec
@@ -90,6 +99,8 @@ Proto --> OpenApi
 
 {{< hint warning >}}
 Recommended when you have a fresh project or a lot of changes.
+
+Easiest method when you know protobuf/grpc. 
 {{< /hint >}}
 
 

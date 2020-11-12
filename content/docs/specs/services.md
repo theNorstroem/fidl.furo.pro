@@ -181,9 +181,44 @@ For DELETE a rel **delete** is set. And on custom methods it is mostly the name 
 
 Use lowercase for the rel.
 
-### Field `query` *string*
-### Field `rpc_name` *string*
+### Field `query` *Queryparam*
+The query params for this service. This fields are used by the client lib to proove the capabilities of the service.
+Spectools will update this list for you, when you come from µSpec. In near future this will be removed, because the information is already
+available in the request type and must not be written twice.
 
+A query param consist of a descritpion for the documentation and a type.
+
+```yaml
+    query:
+      q:
+        description: Use this to search for a fruit.
+        type: string
+      filter:
+        description: Use this field to filter the fruits, this is not searching.
+        type: string
+```
+
+{{< hint warning >}}
+The types and their values **must** be url safe. They will appear in the query string of the request. 
+{{< /hint >}}
+
+### Field `rpc_name` *string*
+The rpc name which should appear in the proto. In the example below you can see that the rpc_name was set to *CreateFruit*
+
+```proto
+service FruitService {
+
+  // Use this to create new fruits.
+  rpc CreateFruit (CreateFruitRequest) returns (google.protobuf.Empty){
+	//Create: POST /fruits fruit.Fruit , google.protobuf.Empty #Use this to create new fruits.
+	option (google.api.http) = {
+		post: "/fruits"
+		body: "body"
+	};
+  }
+}
+
+```
 
 ## Example of a "Complete" Service
 

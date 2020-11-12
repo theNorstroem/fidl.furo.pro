@@ -56,7 +56,7 @@ Imports that are not needed anymore, are removed too.
         - google/type/timeofday.proto
 ```
 
-    ### field options *map<string.string>*
+### field options *map<string, string>*
 When needed, you can add options for your protos. This can be something like the following:
 
 ```yaml

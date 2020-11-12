@@ -40,6 +40,7 @@ Spec --> µSpec
 Spec --> Es6Module
 Spec --> Docs
 Spec --> U33E
+Spec --> ...
 Proto --> Gateway
 Proto --> OpenApi
 {{< /mermaid >}}
@@ -68,6 +69,7 @@ Spec --> Proto
 Spec --> Es6Module
 Spec --> Docs
 Spec --> U33E
+Spec --> ...
 Proto --> Gateway
 Proto --> OpenApi
 {{< /mermaid >}}
@@ -99,6 +101,7 @@ Proto --> µSpec
 Spec --> Es6Module
 Spec --> Docs
 Spec --> U33E
+Spec --> ...
 Proto --> Gateway
 Proto --> OpenApi
 {{< /mermaid >}}
@@ -113,6 +116,7 @@ Proto --> OpenApi
 ### Cons
 - destructive step Proto --> µSpec
 - working in specs for some cases required
+- writing REST service definitions by "hand"  
 - interoperability from backend to client is not guaranteed because some steps are not under control of spectools anymore.
 {{< /columns >}}
 
@@ -132,6 +136,7 @@ Spec --> Proto
 Spec --> Es6Module
 Spec --> Docs
 Spec --> U33E
+Spec --> ...
 Proto --> Gateway
 Proto --> OpenApi
 {{< /mermaid >}}
@@ -175,6 +180,7 @@ Spec --> µSpec
 Spec --> Es6Module
 Spec --> Docs
 Spec --> U33E
+Spec --> ...
 Proto --> Gateway
 Proto --> OpenApi
 Proto --> µSpec

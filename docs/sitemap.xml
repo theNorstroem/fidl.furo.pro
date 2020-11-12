@@ -13,17 +13,8 @@
   </url>
   
   <url>
-    <loc>http://fidl.docs.furo.pro/docs/%C2%B5Specs/</loc>
-  </url>
-  
-  <url>
     <loc>http://fidl.docs.furo.pro/docs/overview/define_type/</loc>
     <lastmod>2020-11-10T12:47:40+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fidl.docs.furo.pro/docs/specs/</loc>
-    <lastmod>2020-11-11T12:04:42+01:00</lastmod>
   </url>
   
   <url>
@@ -36,8 +27,22 @@
   </url>
   
   <url>
+    <loc>http://fidl.docs.furo.pro/docs/%C2%B5Specs/</loc>
+  </url>
+  
+  <url>
     <loc>http://fidl.docs.furo.pro/docs/overview/define_service/</loc>
     <lastmod>2020-11-11T09:43:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fidl.docs.furo.pro/docs/specs/</loc>
+    <lastmod>2020-11-12T15:05:18+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fidl.docs.furo.pro/docs/tools/</loc>
+    <lastmod>2020-11-12T15:05:18+01:00</lastmod>
   </url>
   
   <url>
@@ -48,6 +53,11 @@
   <url>
     <loc>http://fidl.docs.furo.pro/docs/overview/scalar_value_types/</loc>
     <lastmod>2020-11-10T12:47:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fidl.docs.furo.pro/docs/sourceoftruth/</loc>
+    <lastmod>2020-11-12T15:05:18+01:00</lastmod>
   </url>
   
   <url>
@@ -97,12 +107,7 @@
   
   <url>
     <loc>http://fidl.docs.furo.pro/docs/</loc>
-    <lastmod>2020-11-12T12:45:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fidl.docs.furo.pro/docs/tools/</loc>
-    <lastmod>2020-11-11T20:10:09+01:00</lastmod>
+    <lastmod>2020-11-12T15:05:18+01:00</lastmod>
   </url>
   
   <url>

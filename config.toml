@@ -1,4 +1,4 @@
-baseURL = "http://fidl.docs.furo.pro/"
+baseURL = "http://fidl.furo.pro/"
 languageCode = "en-us"
 title = "フロー FIDL"
 theme = ["book"]

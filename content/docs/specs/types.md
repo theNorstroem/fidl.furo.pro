@@ -79,7 +79,7 @@ When you write true not as string, the value will not work.
 
 
 
-## Fields *map<string, Field>
+## Fields *map<string, Field>*
 The most important part of a type spec are the fields. The fields section contains a map with fields. A field itself
 has the properties `type`, `description`, `meta`, `constraints`, `__ui` and `__proto`.
 
@@ -108,9 +108,69 @@ has the properties `type`, `description`, `meta`, `constraints`, `__ui` and `__p
 ```
 
 ### Field `type` *string*
+The type of the field. This should be one of the types that you have defined or installed.
 
 ### Field `description` *string*
+It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.
+
 ### Field `meta` *Meta*
+In the meta field you can set additional information for field in your type. Only the field *meta.repeated* does impact the proto. The options that you set here
+are thought for the backend and the client. 
+This properties are domain specific and can give instructions for *generators*, *validators* or *displaying* the field.
+
+```yaml
+ meta:
+    default: "1234"
+    hint: "look at the post-it on your monitor or below the keyboard"
+    label: auth.Credentials.password.label
+    options:
+        flags: []
+        list: []
+    readonly: false
+    repeated: false
+    extensions: {}
+```
+#### `default` *string*
+The default value for the field when you create a new object. Keep in mind that this is a string and should be parsed by your implementation.
+
+#### `hint` *string*
+This property gives you a hint message. On the furo client libs, this property goes through the translation engine first [optional]. The `furo-data-xxx-input` components will display 
+this value below the field, when you focus it.
+
+#### `label` *string*
+This property labels the field. On the furo client libs, this property goes through the translation engine first [optional]. The `furo-data-xxx-input` components will display
+this value as placeholder (as long the field is empty) and or label (as soon you have some value) 
+
+#### `options.flags` *[]string*
+
+#### `options.list`  *[]Anything*
+
+#### `readonly` *bool*
+Define the field as readonly. The furo client libs will not send this field on a request by default.
+
+#### `repeated` *bool*
+Define the field as repeated. Keep in mind that not all combinations are possible. 
+As an exapmle, if you set *oneof* in __proto, repeated must be set to false. 
+
+#### typespecific: *Anything*
+This is a extension point for fields in types. The name will be changed to extensions and should be repeated.
+
 ### Field `constraints` *map<string, Constraint>*
+
+```yaml
+    constraints:
+      required:
+        is: "true"
+        message: password is required
+```
+
 ### Field `__proto:` *Fieldproto*
+
+
+```yaml
+    __proto:
+        number: 1
+        oneof: ""
+```
+
 ### Field `__ui:` *Uiprops*

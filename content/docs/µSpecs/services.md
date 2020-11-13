@@ -115,7 +115,7 @@ This will add the missing query params to your spec with a default description.
 {{< /hint >}}
 
 ```yaml
-  qp:
+  qp: <--- this means QueryParams
     q: 'string #Use this to search for a fruit.'
     ^  !_____! !______________________________!
     |     |                |

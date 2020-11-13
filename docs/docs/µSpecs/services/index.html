@@ -20,7 +20,7 @@ The field methods in µServcies will translate to services in the standard notat
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.b1b7a6f7c7e596c4c7a6dc15b084171dd3d7e9dce25ed834c77b194e2ee63338.js" integrity="sha256-sbem98fllsTHptwVsIQXHdPX6dziXtg0x3sZTi7mMzg="></script>
+<script defer src="/en.search.min.22360944a2293c571e3a4512b59dfc38171270d347e2a3b60e70f566a647935d.js" integrity="sha256-IjYJRKIpPFceOkUStZ38OBcScNNH4qO2DnD1ZqZHk10="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -574,15 +574,17 @@ because the standard notation is some years old and changing this would be a bre
 <p>The method defiton is made like the type line in µTypes</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">md: &#39;GetFruit</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{frt} google.protobuf.Empty , fruit.FruitCollection #Filterable list of fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>!<span style="color:#000">_!  !______!^ !__! !_____!!__!!____________________!  ^!____________________! !_________________________!</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">|       |   |   |     |     |            |            |           |                          |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">the field  |  (:)  |     |     |      the request type   |           |                          |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">           </span><span style="color:#000">|       |     |   placeholder                 |   the response type                  |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">           </span><span style="color:#000">|       |   the URL                           |                                   description</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#000">method name  |                                  a comma</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000">the http verb                                                                 </span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    
-</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">^   !______!^ !__! !_____!!__!  !___________________! ^ !___________________! ^!________________________!</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">|       |   |   |     |     |            |            |           |           |              |</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">this means |   |   |     |     |      the request type   |           |           |              |</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#000">Method   |   |   |     |   placeholder                 |   the response type   |              |</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Definiton |   |   |   the URL                           |                       |           description</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#000">method name  |                                  a comma                    |</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000">the http verb                                            (#) is a separator, indicating the</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000">|                                                            beginning of the description         </span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#8f5902;font-style:italic">|
+</span><span style="color:#8f5902;font-style:italic">         (:) is just a separator
+</span><span style="color:#8f5902;font-style:italic">
 </span></code></pre></div><h3 id="the-method-name">
   The Method Name
   <a class="anchor" href="#the-method-name">#</a>

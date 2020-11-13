@@ -47,14 +47,16 @@ The method defiton is made like the type line in µTypes
 ```yaml
 methods:
 - md: 'GetFruit: GET /fruits/{frt} google.protobuf.Empty , fruit.FruitCollection #Filterable list of fruits.'
-  !_!  !______!^ !__! !_____!!__!!____________________!  ^!____________________! !_________________________!
-   |       |   |   |     |     |            |            |           |                          |
-the field  |  (:)  |     |     |      the request type   |           |                          |
-           |       |     |   placeholder                 |   the response type                  |
-           |       |   the URL                           |                                   description
-      method name  |                                  a comma
-               the http verb                                                                 
-    
+   ^   !______!^ !__! !_____!!__!  !___________________! ^ !___________________! ^!________________________!
+   |       |   |   |     |     |            |            |           |           |              |
+this means |   |   |     |     |      the request type   |           |           |              |
+  Method   |   |   |     |   placeholder                 |   the response type   |              |
+ Definiton |   |   |   the URL                           |                       |           description
+      method name  |                                  a comma                    |
+               the http verb                                            (#) is a separator, indicating the
+               |                                                            beginning of the description         
+               |
+         (:) is just a separator
 
 ```
 ### The Method Name

@@ -4,7 +4,7 @@ title = "フロー FIDL"
 theme = ["book"]
 
 # (Optional) Set Google Analytics if you use it to track your website.
-# googleAnalytics = "G-9RXJYQ94NB"
+# googleAnalytics = "G-9RXJYQ94NB" UA-
 
 # Highlighting config
 pygmentsCodeFences = true

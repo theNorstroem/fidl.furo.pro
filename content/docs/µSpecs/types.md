@@ -43,7 +43,8 @@ You can have as many type definitions per file as you want. It makes sense that 
     |   indicator to create a collection and or a entity for the type (optional)
     | 
     | 
-field name  
+field name of the type
+
 
 ```
 ### type name

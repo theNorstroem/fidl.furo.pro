@@ -8,7 +8,7 @@ bookCollapseSection: true
 There are a lot of tools, you have at your hand at your fingertips. If you do not want to install them (a lot of work), you can
 simply use the docker image [thenorstroem/furo-bec](/docs/tools/BEC/). It contains erery tool you need.
 
-## [spectools](https://github.com/theNorstroem/spectools/blob/master/doc/spectools.md)
+## [spectools](https://spectools.furo.pro/)
 The spectools is the essential tool to work with furoc-FIDLs, it replaces the @furo/spec npm package.
 
 #### Installation

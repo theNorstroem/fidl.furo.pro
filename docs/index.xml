@@ -184,7 +184,7 @@ You can put the services and types to the same folder (thematic group). You can 
     <item>
       <title>Streaming support added</title>
       <link>http://fidl.furo.pro/posts/stream/</link>
-      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Mar 2021 22:37:46 +0100</pubDate>
       
       <guid>http://fidl.furo.pro/posts/stream/</guid>
       <description>We support the definition of streaming resources as responses now. Read more about it</description>

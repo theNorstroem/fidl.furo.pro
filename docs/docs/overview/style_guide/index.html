@@ -18,7 +18,7 @@ You can put the services and types to the same folder (thematic group). You can 
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.60e84049e50913f3ece1b73c1b221ecf30256590e10cc1538e8b919e986535c5.js" integrity="sha256-YOhASeUJE/Ps4bc8GyIezzAlZZDhDMFTjouRnphlNcU="></script>
+<script defer src="/en.search.min.f693914d0fd0a1e9e72b539b8c9fb3bc7cedfb36387fe8c77e67a0eaacf9ef29.js" integrity="sha256-9pORTQ/QoennK1ObjJ&#43;zvHzt&#43;zY4f&#43;jHfmeg6qz57yk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -177,6 +177,41 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="http://fidl.furo.pro/docs/overview/maps/" class="">Maps</a>
   
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ca5b6e91d74b4d184aec5d2810d2637f" class="toggle"  />
+    <label for="section-ca5b6e91d74b4d184aec5d2810d2637f" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/overview/streaming/" class="">Streaming</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/" class="">Example</a>
+  
+
+        </li>
+      
+    
+  </ul>
 
         </li>
       
@@ -604,21 +639,21 @@ dist/protos
 </blockquote>
 
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitService</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">|
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">    Fruits are healthy, so having a service which can list some fruits would be nice.
-</span><span style="color:#8f5902;font-style:italic">    We do not cover all fruits, but some. The list will grow with time, hopefully.
-</span><span style="color:#8f5902;font-style:italic">  package: fruit
-</span><span style="color:#8f5902;font-style:italic">  target: fruit_service.proto
-</span><span style="color:#8f5902;font-style:italic">  methods:
-</span><span style="color:#8f5902;font-style:italic">    - md: &#39;ListFruits: GET /fruits google.protobuf.Empty , fruit.FruitCollection #Filterable and searchable list of fruits with pagination.&#39;
-</span><span style="color:#8f5902;font-style:italic">      qp:
-</span><span style="color:#8f5902;font-style:italic">        q: &#39;string #Use this to search for a fruit.&#39;
-</span><span style="color:#8f5902;font-style:italic">        filter: &#39;string #Use this field to filter the fruits, this is not searching.&#39;
-</span><span style="color:#8f5902;font-style:italic">        order_by: &#39;string #Use this field to specify the ordering.&#39;
-</span><span style="color:#8f5902;font-style:italic">        page: &#39;string #Use this field to specify page to display.&#39;
-</span><span style="color:#8f5902;font-style:italic">    - md: &#39;Get: GET /fruits/{frt} google.protobuf.Empty , fruit.FruitEntity #Returns a single fruit.&#39;
-</span><span style="color:#8f5902;font-style:italic">      qp:
-</span><span style="color:#8f5902;font-style:italic">        frt: &#39;string #The query param frt stands for the FRuiT id.&#39;
+</span><span style="color:#8f5902;font-style:italic">    We do not cover all fruits, but some. The list will grow with time, hopefully.</span><span style="color:#f8f8f8;text-decoration:underline">    
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit_service.proto</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;ListFruits</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Filterable and searchable list of fruits with pagination.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to filter the fruits, this is not searching.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify the ordering.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify page to display.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{frt} google.protobuf.Empty , fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">frt</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #The query param frt stands for the FRuiT id.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h3 id="url-path">
   URL Path
   <a class="anchor" href="#url-path">#</a>

@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Categories" />
+<meta name="description" content="Streaming #  You can do streaming by adding the keyword stream to your response type.
+Streaming is only supported as response type (Server streaming RPC or in simle words: from server to the client) at the moment.  You need at least spectools 1.24.1 to use this feature  Read more about grpc streaming here
+Streaming big files to the client #  - md: &#39;Get:GET /files/{fid} google.protobuf.Empty , stream google.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Streaming" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://fidl.furo.pro/categories/" />
+<meta property="og:url" content="http://fidl.furo.pro/docs/overview/streaming/" />
 
-<title>Categories | フロー FIDL</title>
+<title>Streaming | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
 <script defer src="/en.search.min.f693914d0fd0a1e9e72b539b8c9fb3bc7cedfb36387fe8c77e67a0eaacf9ef29.js" integrity="sha256-9pORTQ/QoennK1ObjJ&#43;zvHzt&#43;zY4f&#43;jHfmeg6qz57yk="></script>
-<link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/categories/index.xml" title="フロー FIDL" />
+<link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/docs/overview/streaming/index.xml" title="フロー FIDL" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -185,9 +187,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ca5b6e91d74b4d184aec5d2810d2637f" class="toggle"  />
+    <input type="checkbox" id="section-ca5b6e91d74b4d184aec5d2810d2637f" class="toggle" checked />
     <label for="section-ca5b6e91d74b4d184aec5d2810d2637f" class="flex justify-between">
-      <a href="http://fidl.furo.pro/docs/overview/streaming/" class="">Streaming</a>
+      <a href="http://fidl.furo.pro/docs/overview/streaming/" class="active">Streaming</a>
       <span>▾</span>
     </label>
   
@@ -500,7 +502,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Categories</strong>
+  <strong>Streaming</strong>
 
   <label for="toc-control">
     
@@ -513,32 +515,17 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav>
+  <nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#streaming">Streaming</a>
       <ul>
-      
-      </ul>
-    </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-        <li class="flex justify-between">
-          <a href="/tags/FIDL/">FIDL</a>
-          <span>2</span>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
         </li>
-      
       </ul>
     </li>
-    
-  
   </ul>
 </nav>
 
@@ -550,11 +537,44 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  
+  <article class="markdown"><h1 id="streaming">
+  Streaming
+  <a class="anchor" href="#streaming">#</a>
+</h1>
+<p>You can do streaming by adding the keyword <strong>stream</strong> to your response type.</p>
+<blockquote class="book-hint info">
+  Streaming is only supported as response type (Server streaming RPC or in simle words: from server to the client) at the moment.
+</blockquote>
 
-  
+<blockquote class="book-hint warning">
+  You need at least <a href="https://spectools.furo.pro/"><strong>spectools 1.24.1</strong></a> to use this feature
+</blockquote>
 
+<p>Read more about 
+  <a href="https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc">grpc streaming here</a></p>
+<h4 id="streaming-big-files-to-the-client">
+  Streaming big files to the client
+  <a class="anchor" href="#streaming-big-files-to-the-client">#</a>
+</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /files/{fid} google.protobuf.Empty , stream google.api.HttpBody</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns the raw file&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fid</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #The query param fid stands for the id of a file.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>With google.api.HttpBody you can send any content to the client. Read more about 
+  <a href="https://github.com/googleapis/googleapis/blob/master/google/api/httpbody.proto">google.api.HttpBody here</a>.</p>
+<h4 id="stream-a-message-type">
+  Stream a message type
+  <a class="anchor" href="#stream-a-message-type">#</a>
+</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /messagestream google.protobuf.Empty, stream message.Message</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a stream of messages&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>You also can stream a message type to the client.</p>
+<blockquote class="book-hint info">
+  The response will be packed in a attribute &ldquo;result&rdquo;,
+</blockquote>
 
+<p>Please read the 
+  <a href="https://grpc-ecosystem.github.io/grpc-gateway/docs/mapping/customizing_your_gateway/">documentation on the grpc-gateway page</a> for configuring your gateway, or have a look on the 
+  <a href="/docs/overview/streaming/grpc_gateway/.">example subsite</a></p>
+</article>
  
       
 
@@ -574,6 +594,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -582,32 +606,17 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav>
+  <nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#streaming">Streaming</a>
       <ul>
-      
-      </ul>
-    </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-        <li class="flex justify-between">
-          <a href="/tags/FIDL/">FIDL</a>
-          <span>2</span>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
         </li>
-      
       </ul>
     </li>
-    
-  
   </ul>
 </nav>
 

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
+Example
+// import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&#34;application/x-ndjson&#34;, &amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Example" />
+<meta property="og:description" content="Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
+Example
+// import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&#34;application/x-ndjson&#34;, &amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/" />
+
+<title>Example | フロー FIDL</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
+<script defer src="/en.search.min.f693914d0fd0a1e9e72b539b8c9fb3bc7cedfb36387fe8c77e67a0eaacf9ef29.js" integrity="sha256-9pORTQ/QoennK1ObjJ&#43;zvHzt&#43;zY4f&#43;jHfmeg6qz57yk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <div ></div>
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>フロー FIDL</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/" class="">Overview</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/define_type/" class="">Defining a Type</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/define_service/" class="">Defining a Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/default_values/" class="">Default Values</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/scalar_value_types/" class="">Scalar Types</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/using_other_types/" class="">Using Other Types</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/enums/" class="">Enumerations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/oneof/" class="">Oneof</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/maps/" class="">Maps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ca5b6e91d74b4d184aec5d2810d2637f" class="toggle" checked />
+    <label for="section-ca5b6e91d74b4d184aec5d2810d2637f" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/overview/streaming/" class="">Streaming</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/" class=" active">Example</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/packages/" class="">Packages</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5a49e98448c138f3defcd1ff480166f2" class="toggle"  />
+    <label for="section-5a49e98448c138f3defcd1ff480166f2" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/overview/extensions/" class="">Extensions</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/extensions/extension_proto/" class="">Protobuf Extension</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/extensions/extension_ui/" class="">UI Extension</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/style_guide/" class="">Style Guide</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-02a2f2578aa199d9ce0d19ad7b4e5ba3" class="toggle"  />
+    <label for="section-02a2f2578aa199d9ce0d19ad7b4e5ba3" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/%C2%B5Specs/" class="">µSpecs</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/%C2%B5Specs/types/" class="">Types</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/%C2%B5Specs/services/" class="">Services</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-172dfd5e06b2f7615d5de2eefeeb4335" class="toggle"  />
+    <label for="section-172dfd5e06b2f7615d5de2eefeeb4335" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/specs/" class="">Specs</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/specs/types/" class="">Types</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/specs/services/" class="">Services</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a432bb056edf769c9f15f6893988f152" class="toggle"  />
+    <label for="section-a432bb056edf769c9f15f6893988f152" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/tools/" class="">Tools</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/tools/BEC/" class="">B E C</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/sourceoftruth/" class="">Source of Truth</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/theNorstroem/fidl-docs" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://furo.pro/" target="_blank" rel="noopener">
+        furo.pro
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Example</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#example-setup-for-grpc-gateway">Example setup for grpc-gateway</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="example-setup-for-grpc-gateway">
+  Example setup for grpc-gateway
+  <a class="anchor" href="#example-setup-for-grpc-gateway">#</a>
+</h1>
+<p>If you need newline delimited  messages and raw streams, define a marhalerOption for the corresponding mimetype.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#8f5902;font-style:italic">// import 	gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;
+</span><span style="color:#8f5902;font-style:italic"></span>
+        <span style="color:#8f5902;font-style:italic">// Do not send  x-ndjson for gwruntime.MIMEWildcard (*)
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithMarshalerOption</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MIMEWildcard</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">marshaller</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">{</span>
+			<span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">JSONPb</span><span style="color:#000;font-weight:bold">{</span>
+				<span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
+					<span style="color:#000">UseProtoNames</span><span style="color:#000;font-weight:bold">:</span>   <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+					<span style="color:#000">EmitUnpopulated</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+				<span style="color:#000;font-weight:bold">},</span>
+				<span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
+					<span style="color:#000">DiscardUnknown</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+				<span style="color:#000;font-weight:bold">},</span>
+			<span style="color:#000;font-weight:bold">},</span>
+		<span style="color:#000;font-weight:bold">}),</span>
+        
+        <span style="color:#8f5902;font-style:italic">// send newline delimeted json if client sends the corresponding accept type
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithMarshalerOption</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;application/x-ndjson&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">{</span>
+			<span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">JSONPb</span><span style="color:#000;font-weight:bold">{</span>
+				<span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
+					<span style="color:#000">UseProtoNames</span><span style="color:#000;font-weight:bold">:</span>   <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+					<span style="color:#000">EmitUnpopulated</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+				<span style="color:#000;font-weight:bold">},</span>
+				<span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
+					<span style="color:#000">DiscardUnknown</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+				<span style="color:#000;font-weight:bold">},</span>
+			<span style="color:#000;font-weight:bold">},</span>
+		<span style="color:#000;font-weight:bold">}),</span>
+	<span style="color:#000;font-weight:bold">}</span>
+ 
+
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">marshaller</span>
+
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#4e9a06">&#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;</span>
+	<span style="color:#4e9a06">&#34;google.golang.org/genproto/googleapis/api/httpbody&#34;</span>
+<span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#8f5902;font-style:italic">// HTTPBodyMarshaler is a Marshaler which supports marshaling of a
+</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message as the full response body if it is
+</span><span style="color:#8f5902;font-style:italic">// the actual message used as the response. If not, then this will
+</span><span style="color:#8f5902;font-style:italic">// simply fallback to the Marshaler specified as its default Marshaler.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">HTTPBodyMarshaler</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">runtime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">// ContentType returns its specified content type in case v is a
+</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message, otherwise it will fall back to the default Marshalers
+</span><span style="color:#8f5902;font-style:italic">// content type.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">ContentType</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span> <span style="color:#204a87;font-weight:bold">interface</span><span style="color:#000;font-weight:bold">{})</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ok</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">v</span><span style="color:#000;font-weight:bold">.(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">httpbody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HttpBody</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000">ok</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">GetContentType</span><span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">h</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ContentType</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">// Marshal marshals &#34;v&#34; by returning the body bytes if v is a
+</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message, otherwise it falls back to the default Marshaler.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Marshal</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span> <span style="color:#204a87;font-weight:bold">interface</span><span style="color:#000;font-weight:bold">{})</span> <span style="color:#000;font-weight:bold">([]</span><span style="color:#204a87;font-weight:bold">byte</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">error</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ok</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">v</span><span style="color:#000;font-weight:bold">.(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">httpbody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HttpBody</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000">ok</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Data</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">nil</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">h</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshal</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">// no Delimiter for httpbody
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">j</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Delimiter</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">[]</span><span style="color:#204a87;font-weight:bold">byte</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">[]</span><span style="color:#204a87;font-weight:bold">byte</span><span style="color:#000;font-weight:bold">{}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#example-setup-for-grpc-gateway">Example setup for grpc-gateway</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

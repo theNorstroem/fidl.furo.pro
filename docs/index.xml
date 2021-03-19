@@ -138,6 +138,17 @@ Packages in µType are defined in the type field. The package for the type below
     </item>
     
     <item>
+      <title>Example</title>
+      <link>http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/</guid>
+      <description>Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
+Example
+// import gwruntime &amp;#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&amp;#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&amp;#34;application/x-ndjson&amp;#34;, &amp;amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;amp;gwruntime.</description>
+    </item>
+    
+    <item>
       <title>Protobuf Extension</title>
       <link>http://fidl.furo.pro/docs/overview/extensions/extension_proto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -171,7 +182,16 @@ You can put the services and types to the same folder (thematic group). You can 
     </item>
     
     <item>
-      <title>Hello</title>
+      <title>Streaming support added</title>
+      <link>http://fidl.furo.pro/posts/stream/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://fidl.furo.pro/posts/stream/</guid>
+      <description>We support the definition of streaming resources as responses now. Read more about it</description>
+    </item>
+    
+    <item>
+      <title>Initial documentation</title>
       <link>http://fidl.furo.pro/posts/hello/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       

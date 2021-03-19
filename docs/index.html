@@ -2,7 +2,7 @@
 <html lang="en" dir=>
 
 <head>
-	<meta name="generator" content="Hugo 0.75.1" />
+	<meta name="generator" content="Hugo 0.78.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="フロー Furo FIDL, the **F**uro **I**nterface **D**efinition **L**anguage">
@@ -15,7 +15,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.60e84049e50913f3ece1b73c1b221ecf30256590e10cc1538e8b919e986535c5.js" integrity="sha256-YOhASeUJE/Ps4bc8GyIezzAlZZDhDMFTjouRnphlNcU="></script>
+<script defer src="/en.search.min.f693914d0fd0a1e9e72b539b8c9fb3bc7cedfb36387fe8c77e67a0eaacf9ef29.js" integrity="sha256-9pORTQ/QoennK1ObjJ&#43;zvHzt&#43;zY4f&#43;jHfmeg6qz57yk="></script>
 <link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/index.xml" title="フロー FIDL" />
 <!--
 Made with Book Theme
@@ -175,6 +175,41 @@ https://github.com/alex-shpak/hugo-book
   
     <a href="http://fidl.furo.pro/docs/overview/maps/" class="">Maps</a>
   
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ca5b6e91d74b4d184aec5d2810d2637f" class="toggle"  />
+    <label for="section-ca5b6e91d74b4d184aec5d2810d2637f" class="flex justify-between">
+      <a href="http://fidl.furo.pro/docs/overview/streaming/" class="">Streaming</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/" class="">Example</a>
+  
+
+        </li>
+      
+    
+  </ul>
 
         </li>
       
@@ -512,8 +547,8 @@ There is a short notation form <a href="/docs/%C2%B5Specs/">(µSpecs)</a> and th
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Services.clientservice</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">clientservice.proto</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">services</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Create</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST /clients person.Client , person.ClientEntity # Add a new client.&#39;      </span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Delete</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE /clients/{cid} google.protobuf.Empty, google.protobuf.Empty # Delete a client&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Create</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST /clients person.Client , person.ClientEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Add a new client.&#39;      </span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Delete</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE /clients/{cid} google.protobuf.Empty, google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic"># Delete a client&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">cid</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #The query param cid stands for client id.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><ul>

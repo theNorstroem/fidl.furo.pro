@@ -95,6 +95,7 @@ has the properties `type`, `description`, `meta`, `constraints`, `__ui` and `__p
             default: ""
             hint: ""
             label: auth.Credentials.password.label
+            placeholder: xx.xx.xx.xx
             options:
                 flags: []
                 list: []
@@ -123,6 +124,7 @@ This properties are domain specific and can give instructions for *generators*, 
     default: "1234"
     hint: "look at the post-it on your monitor or below the keyboard"
     label: auth.Credentials.password.label
+    placeholder: xx.xx.xx.xx
     options:
         flags: []
         list: []
@@ -140,6 +142,10 @@ this value below the field, when you focus it.
 #### `label` *string*
 This property labels the field. On the furo client libs, this property goes through the translation engine first [optional]. The `furo-data-xxx-input` components will display
 this value as placeholder (as long the field is empty) and or label (as soon you have some value) 
+
+#### `placeholder` *string*
+This property labels the field. On the furo client libs, this property goes through the translation engine first [optional]. The `furo-data-ui5-xxx` components will display
+this value as placeholder (as long the field is empty).
 
 #### `options.flags` *[]string*
 
@@ -217,9 +223,3 @@ write it so. When your generator can handle your "intention" then a flag *big* o
 
 The property `no_init` tells the generator to not build something for this input.
 
-
-{{< hint warning >}}
-**Recomendation:**
-
-When this information is enough for your generators, use it. If you need more flexibility, write your own field-extension.
-{{< /hint >}}

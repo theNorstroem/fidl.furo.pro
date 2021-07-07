@@ -4,7 +4,7 @@
 # remove old search indexes
 rm docs/en.search*
 rm -rf tmp
-git clone --depth 1 --sparse git@github.com:eclipse/eclipsefuro.git ./tmp
+git clone --depth 1  git@github.com:eclipse/eclipsefuro.git ./tmp
 
 # build docs
 hugo -s ./tmp/docs/fidl -d ../../../docs

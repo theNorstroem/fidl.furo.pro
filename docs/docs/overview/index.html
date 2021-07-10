@@ -18,7 +18,7 @@ For a better understanding and when possible the µSpec, spec and the resulting 
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/docs/overview/index.xml" title="フロー FIDL" />
 <!--
 Made with Book Theme
@@ -622,12 +622,23 @@ A
 </h3>
 <p>This is done by using the protos with 
   <a href="https://github.com/grpc-ecosystem/grpc-gateway">protoc-gen-grpc-gateway</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> protoc -I . --grpc-gateway_out ./gen/go <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>     --grpc-gateway_opt <span style="color:#000">logtostderr</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>     --grpc-gateway_opt <span style="color:#000">paths</span><span style="color:#ce5c00;font-weight:bold">=</span>source_relative <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>     --grpc-gateway_opt <span style="color:#000">grpc_api_configuration</span><span style="color:#ce5c00;font-weight:bold">=</span>path/to/config.yaml <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>     your/service/v1/your_service.proto
-</code></pre></div><h3 id="open-api-specifications-indirect">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> protoc -I . --grpc-gateway_out ./gen/go <span style="color:#d14">\
+</span><span style="color:#d14"></span>     --grpc-gateway_opt <span style="color:#008080">logtostderr</span><span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> <span style="color:#d14">\
+</span><span style="color:#d14"></span>     --grpc-gateway_opt <span style="color:#008080">paths</span><span style="color:#000;font-weight:bold">=</span>source_relative <span style="color:#d14">\
+</span><span style="color:#d14"></span>     --grpc-gateway_opt <span style="color:#008080">grpc_api_configuration</span><span style="color:#000;font-weight:bold">=</span>path/to/config.yaml <span style="color:#d14">\
+</span><span style="color:#d14"></span>     your/service/v1/your_service.proto
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="open-api-specifications-indirect">
   Open Api Specifications <em>indirect</em>
   <a class="anchor" href="#open-api-specifications-indirect">#</a>
 </h3>
@@ -635,8 +646,15 @@ A
   <a href="https://swagger.io/">Open Api aka swagger</a> can be used for various things.</p>
 <p>Generating Open Api Specifications is done by using the generated protos with 
   <a href="https://github.com/grpc-ecosystem/grpc-gateway">protoc-gen-openapiv2</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">protoc -I . --openapiv2_out ./gen/openapiv2 --openapiv2_opt <span style="color:#000">logtostderr</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> your/service/v1/your_service.proto
-</code></pre></div><h3 id="various-clients-and-servers-indirect">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">protoc -I . --openapiv2_out ./gen/openapiv2 --openapiv2_opt <span style="color:#008080">logtostderr</span><span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> your/service/v1/your_service.proto
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="various-clients-and-servers-indirect">
   Various Clients and Servers <em>indirect</em>
   <a class="anchor" href="#various-clients-and-servers-indirect">#</a>
 </h3>
@@ -703,9 +721,9 @@ After running Furo, you should receive the same proto file (proto3).</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/75c8627fa3a8bb40d1af2fa0ed6fd21c77d438c4" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/d07a4aafd0216f6ee1b3564bb714ffc363ae9b2b" title='Last modified by veith | July 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 7, 2021</span>
+      <span>July 10, 2021</span>
     </a>
   </div>
 

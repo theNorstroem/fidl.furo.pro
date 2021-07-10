@@ -20,7 +20,7 @@ The field methods in µServcies will translate to services in the standard notat
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -570,18 +570,35 @@ The fields name, package and methods are mandatory, the field target and descrip
 because the standard notation is some years old and changing this would be a breaking change we do not want to do at the moment.
 </blockquote>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitService</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Fruits are healthy, so having a service which can list some fruits would be nice.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit_service.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;ListFruits</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Filterable and searchable list of fruits with pagination.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to filter the fruits, this is not searching.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify the ordering.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify page to display.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="the-name">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>FruitService<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Fruits are healthy, so having a service which can list some fruits would be nice.<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>fruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">target</span>:<span style="color:#bbb"> </span>fruit_service.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">methods</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">md: &#39;ListFruits</span>:<span style="color:#bbb"> </span>GET /fruits google.protobuf.Empty , fruit.FruitCollection<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Filterable and searchable list of fruits with pagination.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">qp</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">q</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">filter</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to filter the fruits, this is not searching.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">order_by</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to specify the ordering.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">page</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to specify page to display.&#39;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="the-name">
   The Name
   <a class="anchor" href="#the-name">#</a>
 </h2>
@@ -607,20 +624,39 @@ because the standard notation is some years old and changing this would be a bre
   <a class="anchor" href="#the-method-definition">#</a>
 </h2>
 <p>The method defiton is made like the type line in µTypes</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">md: &#39;GetFruit</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{frt} google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Filterable list of fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">^   !______!^ !__! !_____!!__!  !___________________! ^ !___________________! ^!________________________!</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">|       |   |   |     |     |            |            |           |           |              |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000">this means |   |   |     |     |      the request type   |           |           |              |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#000">Method   |   |   |     |   placeholder                 |   the response type   |              |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Definiton |   |   |   the URL                           |                       |           description</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#000">method name  |                                  a comma                    |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000">the http verb                                            (#) is a separator, indicating the</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000">|                                                            beginning of the description         </span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">               </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">         </span><span style="color:#f8f8f8;text-decoration:underline">         </span><span style="color:#000">(:) is just a separator</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="the-method-name">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">methods</span>:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>- <span style="color:#000080">md: &#39;GetFruit</span>:<span style="color:#bbb"> </span>GET /fruits/{frt} google.protobuf.Empty , fruit.FruitCollection<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Filterable list of fruits.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">   </span>^   !______!^ !__! !_____!!__!  !___________________! ^ !___________________! ^!________________________!<span style="color:#bbb">
+</span><span style="color:#bbb">   </span>|       |   |   |     |     |            |            |           |           |              |<span style="color:#bbb">
+</span><span style="color:#bbb"></span>this means |   |   |     |     |      the request type   |           |           |              |<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>Method   |   |   |     |   placeholder                 |   the response type   |              |<span style="color:#bbb">
+</span><span style="color:#bbb"> </span>Definiton |   |   |   the URL                           |                       |           description<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>method name  |                                  a comma                    |<span style="color:#bbb">
+</span><span style="color:#bbb">               </span>the http verb                                            (#) is a separator, indicating the<span style="color:#bbb">
+</span><span style="color:#bbb">               </span>|                                                            beginning of the description         <span style="color:#bbb">
+</span><span style="color:#bbb">               </span>|<span style="color:#d14">
+</span><span style="color:#d14">         </span><span style="color:#bbb">         </span>(:) is just a separator<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="the-method-name">
   The Method Name
   <a class="anchor" href="#the-method-name">#</a>
 </h3>
@@ -694,15 +730,29 @@ give good hints to the devs who have to implement the specs.</p>
 
 </blockquote>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">&lt;--- this means QueryParams</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#000">^  !_____! !______________________________!</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#000">|     |                |</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#000">|    type           description   </span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">   </span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#000">the name of the query param</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="the-query-param-name">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080">qp</span>:<span style="color:#bbb"> </span>&lt;--- this means QueryParams<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">q</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>^  !_____! !______________________________!<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|     |                |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|    type           description   <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|<span style="color:#d14">
+</span><span style="color:#d14">   </span><span style="color:#bbb">   </span>the name of the query param<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="the-query-param-name">
   The Query Param Name
   <a class="anchor" href="#the-query-param-name">#</a>
 </h3>

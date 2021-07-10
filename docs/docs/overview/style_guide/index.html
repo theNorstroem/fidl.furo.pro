@@ -13,12 +13,12 @@ File structure #  Files should be named lower_snake_case.types.yaml.
 You can put the services and types to the same folder (thematic group). You can move the files around without any effect. The resulting protos does not depend on the FIDL file names or structure, they will follow the given package definitions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.furo.pro/docs/overview/style_guide/" />
-<meta property="article:modified_time" content="2021-07-07T16:56:54+02:00" />
+<meta property="article:modified_time" content="2021-07-10T17:55:56+02:00" />
 <title>Style Guide | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -562,7 +562,32 @@ and follows also the
 <p>Files should be named lower_snake_case.types.yaml.</p>
 <p>You can put the services and types to the same folder (thematic group). You can move the files around without any effect.
 The resulting protos does not depend on the FIDL file names or structure, they will follow the given package definitions.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">muspecs
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">muspecs
 ├── auth
 │   ├── auth.services.yaml
 │   └── auth.types.yaml
@@ -583,7 +608,9 @@ dist/protos
     ├── fruitservice.proto
     └── reqmsgs.proto
 
-</code></pre></div><h2 id="type-and-field-names">
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="type-and-field-names">
   Type and field names
   <a class="anchor" href="#type-and-field-names">#</a>
 </h2>
@@ -614,12 +641,23 @@ dist/protos
   birth_date
 </blockquote>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;sample.Sample #A sample type&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">fields</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">password</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;* string:1 #The password.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">birth_date</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;* google.type.Date:2 #The username or email, or something to identify.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">details</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;sample.Details:3 #Details.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">  
-</span></code></pre></div><p>If your field name contains a number, the number should appear after the letter instead of after the underscore. e.g., use song_name1 instead of song_name_1</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">type</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;sample.Sample #A sample type&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">fields</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">password</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;* string:1 #The password.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">birth_date</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;* google.type.Date:2 #The username or email, or something to identify.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">details</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;sample.Details:3 #Details.&#39;</span><span style="color:#bbb">  
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If your field name contains a number, the number should appear after the letter instead of after the underscore. e.g., use song_name1 instead of song_name_1</p>
 <h4 id="repeated-fields">
   Repeated fields
   <a class="anchor" href="#repeated-fields">#</a>
@@ -638,23 +676,45 @@ dist/protos
   Look at <strong>- name: FruitService</strong> , <strong>- md: &lsquo;ListFruits: GET /&hellip;</strong>. You can find a good guide and explanation on the <a href="https://cloud.google.com/apis/design/standard_methods">Standard Methods</a> page of the cloud API design guide page.
 </blockquote>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitService</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">    Fruits are healthy, so having a service which can list some fruits would be nice.
-</span><span style="color:#8f5902;font-style:italic">    We do not cover all fruits, but some. The list will grow with time, hopefully.</span><span style="color:#f8f8f8;text-decoration:underline">    
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">target</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit_service.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">methods</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;ListFruits</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Filterable and searchable list of fruits with pagination.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to filter the fruits, this is not searching.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify the ordering.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #Use this field to specify page to display.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{frt} google.protobuf.Empty , fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">frt</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #The query param frt stands for the FRuiT id.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="url-path">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>FruitService<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">    Fruits are healthy, so having a service which can list some fruits would be nice.
+</span><span style="color:#d14">    We do not cover all fruits, but some. The list will grow with time, hopefully.</span><span style="color:#bbb">    
+</span><span style="color:#bbb">  </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>fruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">target</span>:<span style="color:#bbb"> </span>fruit_service.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">methods</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">md: &#39;ListFruits</span>:<span style="color:#bbb"> </span>GET /fruits google.protobuf.Empty , fruit.FruitCollection<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Filterable and searchable list of fruits with pagination.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">qp</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">q</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this to search for a fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">filter</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to filter the fruits, this is not searching.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">order_by</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to specify the ordering.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">page</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #Use this field to specify page to display.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">md: &#39;Get</span>:<span style="color:#bbb"> </span>GET /fruits/{frt} google.protobuf.Empty , fruit.FruitEntity<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">qp</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">frt</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #The query param frt stands for the FRuiT id.&#39;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="url-path">
   URL Path
   <a class="anchor" href="#url-path">#</a>
 </h3>
@@ -702,9 +762,9 @@ The first letter of a word is allowed to be a vovel.</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/75c8627fa3a8bb40d1af2fa0ed6fd21c77d438c4" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/d07a4aafd0216f6ee1b3564bb714ffc363ae9b2b" title='Last modified by veith | July 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 7, 2021</span>
+      <span>July 10, 2021</span>
     </a>
   </div>
 

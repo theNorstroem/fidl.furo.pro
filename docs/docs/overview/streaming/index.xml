@@ -14,7 +14,7 @@
       <guid>http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/</guid>
       <description>Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
 Example
-// import gwruntime &amp;#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&amp;#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&amp;#34;application/x-ndjson&amp;#34;, &amp;amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;amp;gwruntime.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  // import gwruntime &amp;#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&amp;#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;amp;gwruntime.</description>
     </item>
     
   </channel>

@@ -13,12 +13,12 @@ name #  The type of the service without the package name. Follow the style guide
 version #  Put any version information of the service. This field does not affect the URL of the services/methods." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.furo.pro/docs/specs/services/" />
-<meta property="article:modified_time" content="2021-07-07T16:56:54+02:00" />
+<meta property="article:modified_time" content="2021-07-10T17:55:56+02:00" />
 <title>Services | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -583,29 +583,58 @@ Furo will add a default description in the generates “developer was to lazy to
   <a class="anchor" href="#lifecycle">#</a>
 </h2>
 <p>Lifecycle information for the service. If you set to true, put in a info with an alternative solution and maybe a deadline.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">lifecycle</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deprecated</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">false</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">info</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">This version is still valid</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="__proto">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">lifecycle</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deprecated</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">false</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">info</span>:<span style="color:#bbb"> </span>This version is still valid<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="__proto">
   __proto
   <a class="anchor" href="#__proto">#</a>
 </h2>
 <p>The proto section defines some properties to generate the proto files.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">__proto</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">targetfile</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruitservice.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">imports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/api/annotations.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">fruit/reqmsgs.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/protobuf/empty.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">fruit/fruit.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/protobuf/field_mask.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/fruit;fruitpb</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitserviceProto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.basefruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="field-package-string">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">__proto</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>fruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">targetfile</span>:<span style="color:#bbb"> </span>fruitservice.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">imports</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/api/annotations.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- fruit/reqmsgs.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/protobuf/empty.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- fruit/fruit.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/protobuf/field_mask.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">options</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/veith/doit-specs/dist/pb/fruit;fruitpb<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>FruitserviceProto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.furo.basefruit<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="field-package-string">
   Field <code>package</code> <em>string</em>
   <a class="anchor" href="#field-package-string">#</a>
 </h3>
@@ -618,20 +647,40 @@ Furo will add a default description in the generates “developer was to lazy to
 Additional imports will not be removed (maybe you have to do a import for side effects).</p>
 <p>This can be done with the command <code>furo checkImports</code> and is done in some other commands too.
 Imports that can not be found would be reported. So you can check for typos like <code>fruit.FruitCollections</code> which should be a <code>fruit.FruitCollection</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 specs/Fruitservice.service.spec :Import fruit.FruitCollections not found in Service FruitService on param ListFruitService
 
-</code></pre></div><h3 id="field-options-mapstringstring">
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="field-options-mapstringstring">
   field options <em>map&lt;string,string&gt;</em>
   <a class="anchor" href="#field-options-mapstringstring">#</a>
 </h3>
 <p>When needed, you can add options for your protos. This can be something like the following:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/fruit;fruitpb</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitserviceProto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.basefruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h2 id="services-mapstring-service">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080">options</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/veith/doit-specs/dist/pb/fruit;fruitpb<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>FruitserviceProto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.furo.basefruit<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="services-mapstring-service">
   services <em>map&lt;string, service&gt;</em>
   <a class="anchor" href="#services-mapstring-service">#</a>
 </h2>
@@ -640,32 +689,63 @@ The service section contains a map with services. The key is the &ldquo;name&rdq
 like <em>List</em>, <em>Get</em>, <em>Delete</em>, <em>Create</em>, <em>Update</em>, <em>CustomName</em>. This names are not the rpc_name.</p>
 <p>A service itself has the properties  <code>description</code>, <code>data</code>, <code>deeplink</code>, <code>query</code> and <code>rpc_name</code>.</p>
 <p><strong>a single service in detail</strong></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">List</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">List fruits with pagination.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;List</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#List fruits with pagination.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">list</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to search for a fruit.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to filter the fruits, this is not searching.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to specify the ordering.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to specify page to display.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ListFruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h3 id="field-description-string">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080">List</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>List fruits with pagination.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>fruit.FruitCollection<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;List</span>:<span style="color:#bbb"> </span>GET /fruits google.protobuf.Empty , fruit.FruitCollection<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#List fruits with pagination.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>GET<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>list<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">q</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to search for a fruit.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">filter</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to filter the fruits, this is not searching.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">order_by</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to specify the ordering.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">page</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to specify page to display.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>ListFruits<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="field-description-string">
   Field <code>description</code> <em>string</em>
   <a class="anchor" href="#field-description-string">#</a>
 </h3>
@@ -675,11 +755,21 @@ like <em>List</em>, <em>Get</em>, <em>Delete</em>, <em>Create</em>, <em>Update</
   <a class="anchor" href="#field-data-servicereqres">#</a>
 </h3>
 <p>Data contains the repuest and response types for the service.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h4 id="request-string">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>fruit.FruitCollection<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="request-string">
   <code>request</code> <em>string</em>
   <a class="anchor" href="#request-string">#</a>
 </h4>
@@ -704,12 +794,23 @@ pattern to the HTTP body, or omitted for not having any HTTP request body.</p>
 </h3>
 <p>General URL Paht information for the service.</p>
 <p><strong>deeplink for GetFruit</strong></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{fr} google.protobuf.Empty , fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits/{fr}</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">self</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><h4 id="description-string">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Get</span>:<span style="color:#bbb"> </span>GET /fruits/{fr} google.protobuf.Empty , fruit.FruitEntity<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits/{fr}<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>GET<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>self<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="description-string">
   <code>description</code> <em>string</em>
   <a class="anchor" href="#description-string">#</a>
 </h4>
@@ -755,14 +856,27 @@ For DELETE a rel <strong>delete</strong> is set. And on custom methods it is mos
 Furo will update this list for you, when you come from µSpec. In near future this will be removed, because the information is already
 available in the request type and must not be written twice.</p>
 <p>A query param consist of a descritpion for the documentation and a type.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to search for a fruit.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to filter the fruits, this is not searching.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><blockquote class="book-hint warning">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">q</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to search for a fruit.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">filter</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to filter the fruits, this is not searching.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="book-hint warning">
   The types and their values <strong>must</strong> be url safe. They will appear in the query string of the request.
 </blockquote>
 
@@ -771,165 +885,331 @@ available in the request type and must not be written twice.</p>
   <a class="anchor" href="#field-rpc_name-string">#</a>
 </h3>
 <p>The rpc name which should appear in the proto. In the example below you can see that the rpc_name was set to <em>CreateFruit</em></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-proto" data-lang="proto"><span style="color:#204a87;font-weight:bold">service</span> <span style="color:#000">FruitService</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#a40000">
-</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>  <span style="color:#8f5902;font-style:italic">// Use this to create new fruits.
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">rpc</span> <span style="color:#000">CreateFruit</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">CreateFruitRequest</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">returns</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">google.protobuf.Empty</span><span style="color:#000;font-weight:bold">){</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>	<span style="color:#8f5902;font-style:italic">//Create: POST /fruits fruit.Fruit , google.protobuf.Empty #Use this to create new fruits.
-</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">option</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">google.api.http</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>		<span style="color:#000">post</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;/fruits&#34;</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>		<span style="color:#000">body</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;body&#34;</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>	<span style="color:#000;font-weight:bold">};</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span>  <span style="color:#000;font-weight:bold">}</span><span style="color:#a40000">
-</span><span style="color:#a40000"></span><span style="color:#000;font-weight:bold">}</span><span style="color:#a40000">
-</span><span style="color:#a40000">
-</span></code></pre></div><h2 id="example-of-a-complete-service">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-proto" data-lang="proto"><span style="color:#000;font-weight:bold">service</span> FruitService {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#998;font-style:italic">// Use this to create new fruits.
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">rpc</span> CreateFruit (CreateFruitRequest) <span style="color:#000;font-weight:bold">returns</span> (google.protobuf.Empty){<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#998;font-style:italic">//Create: POST /fruits fruit.Fruit , google.protobuf.Empty #Use this to create new fruits.
+</span><span style="color:#998;font-style:italic"></span>	<span style="color:#000;font-weight:bold">option</span> (google.api.http) <span style="color:#000;font-weight:bold">=</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>		post<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;/fruits&#34;</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>		body<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;body&#34;</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	};<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  }<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="example-of-a-complete-service">
   Example of a &ldquo;Complete&rdquo; Service
   <a class="anchor" href="#example-of-a-complete-service">#</a>
 </h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitService</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">|</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">  Fruits are healthy, so having a service which can list some fruits would be nice.
-</span><span style="color:#8f5902;font-style:italic">  We do not cover all fruits, but some. The list will grow with time, hopefully.</span><span style="color:#f8f8f8;text-decoration:underline">  
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">lifecycle</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">null</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">__proto</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">targetfile</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruitservice.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">imports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/api/annotations.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">fruit/reqmsgs.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/protobuf/empty.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">fruit/fruit.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#000">google/protobuf/field_mask.proto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">options</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">go_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">github.com/veith/doit-specs/dist/pb/fruit;fruitpb</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_multiple_files</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_outer_classname</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FruitserviceProto</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">java_package</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">com.furo.basefruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">services</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">List</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">List fruits with pagination.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;List</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits google.protobuf.Empty , fruit.FruitCollection</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#List fruits with pagination.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">list</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">q</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to search for a fruit.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">filter</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to filter the fruits, this is not searching.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">order_by</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to specify the ordering.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">page</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this field to specify page to display.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ListFruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Returns a single fruit.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /fruits/{fr} google.protobuf.Empty , fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits/{fr}</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">self</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">The query param fr stands for FR id.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GetFruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">Create</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to create new fruits.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.Fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Create</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST /fruits fruit.Fruit , google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Use this to create new fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">create</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>{<span style="color:#f8f8f8;text-decoration:underline"> </span>}<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">CreateFruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">Update</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to update existing fruits.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.Fruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Update</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">PUT /fruits/{fr} fruit.Fruit , fruit.FruitEntity</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Use this to update existing fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits/{fr}</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">PUT</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">update</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fr string.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">update_mask</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Needed to patch a record</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.FieldMask</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">UpdateFruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">Delete</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to delete existing fruits.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Delete</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE /fruits/{fr} google.protobuf.Empty , google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Use this to delete existing fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits/{fr}</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">delete</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fr string.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DeleteFruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">DeleteAll</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Use this to delete ALL fruits.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;DeleteAll</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE /fruits google.protobuf.Empty , google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Use this to delete ALL fruits.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DELETE</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">deleteall</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>{<span style="color:#f8f8f8;text-decoration:underline"> </span>}<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">DeleteAllFruits</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">Ferment</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Fermented fruits tastes very good in liquid form.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">request</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">response</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">bodyfield</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">body</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">deeplink</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">description: &#39;Ferment</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST /fruits/{fr}:ferment google.protobuf.Empty , google.protobuf.Empty</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Custom methods are always POST.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">href</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/fruits/{fr}:ferment</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">method</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">POST</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">rel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">ferment</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">query</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fr</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">description</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">fr is the placeholder for the fruit id.</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">string</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">rpc_name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">FermentFruit</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div></article>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>FruitService<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">version</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">  Fruits are healthy, so having a service which can list some fruits would be nice.
+</span><span style="color:#d14">  We do not cover all fruits, but some. The list will grow with time, hopefully.</span><span style="color:#bbb">  
+</span><span style="color:#bbb"></span><span style="color:#000080">lifecycle</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">null</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">__proto</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>fruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">targetfile</span>:<span style="color:#bbb"> </span>fruitservice.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">imports</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/api/annotations.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- fruit/reqmsgs.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/protobuf/empty.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- fruit/fruit.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- google/protobuf/field_mask.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">options</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/veith/doit-specs/dist/pb/fruit;fruitpb<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>FruitserviceProto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.furo.basefruit<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">services</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">List</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>List fruits with pagination.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>fruit.FruitCollection<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;List</span>:<span style="color:#bbb"> </span>GET /fruits google.protobuf.Empty , fruit.FruitCollection<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#List fruits with pagination.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>GET<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>list<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">q</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to search for a fruit.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">filter</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to filter the fruits, this is not searching.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">order_by</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to specify the ordering.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">page</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this field to specify page to display.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>ListFruits<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">Get</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Returns a single fruit.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>fruit.FruitEntity<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Get</span>:<span style="color:#bbb"> </span>GET /fruits/{fr} google.protobuf.Empty , fruit.FruitEntity<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Returns a single fruit.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits/{fr}<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>GET<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>self<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">fr</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>The query param fr stands for FR id.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>GetFruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">Create</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to create new fruits.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>fruit.Fruit<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Create</span>:<span style="color:#bbb"> </span>POST /fruits fruit.Fruit , google.protobuf.Empty<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this to create new fruits.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>POST<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>create<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>CreateFruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">Update</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to update existing fruits.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>fruit.Fruit<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>fruit.FruitEntity<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Update</span>:<span style="color:#bbb"> </span>PUT /fruits/{fr} fruit.Fruit , fruit.FruitEntity<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this to update existing fruits.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits/{fr}<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>PUT<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>update<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">fr</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>fr string.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">update_mask</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Needed to patch a record<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>google.protobuf.FieldMask<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>UpdateFruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">Delete</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to delete existing fruits.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Delete</span>:<span style="color:#bbb"> </span>DELETE /fruits/{fr} google.protobuf.Empty , google.protobuf.Empty<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this to delete existing fruits.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits/{fr}<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>DELETE<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>delete<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">fr</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>fr string.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>DeleteFruit<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">DeleteAll</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Use this to delete ALL fruits.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;DeleteAll</span>:<span style="color:#bbb"> </span>DELETE /fruits google.protobuf.Empty , google.protobuf.Empty<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Use this to delete ALL fruits.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>DELETE<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>deleteall<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>DeleteAllFruits<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">Ferment</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Fermented fruits tastes very good in liquid form.<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">data</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">request</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">response</span>:<span style="color:#bbb"> </span>google.protobuf.Empty<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">bodyfield</span>:<span style="color:#bbb"> </span>body<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">deeplink</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">description: &#39;Ferment</span>:<span style="color:#bbb"> </span>POST /fruits/{fr}:ferment google.protobuf.Empty , google.protobuf.Empty<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Custom methods are always POST.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">href</span>:<span style="color:#bbb"> </span>/fruits/{fr}:ferment<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span>POST<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">rel</span>:<span style="color:#bbb"> </span>ferment<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">query</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">fr</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>fr is the placeholder for the fruit id.<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>string<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">rpc_name</span>:<span style="color:#bbb"> </span>FermentFruit<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div></article>
  
       
 
@@ -939,9 +1219,9 @@ available in the request type and must not be written twice.</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/75c8627fa3a8bb40d1af2fa0ed6fd21c77d438c4" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/d07a4aafd0216f6ee1b3564bb714ffc363ae9b2b" title='Last modified by veith | July 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 7, 2021</span>
+      <span>July 10, 2021</span>
     </a>
   </div>
 

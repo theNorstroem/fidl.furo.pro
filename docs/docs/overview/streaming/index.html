@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Streaming #  You can do streaming by adding the keyword stream to your response type.
 Streaming is only supported as response type (Server streaming RPC or in simle words: from server to the client) at the moment.  You need at least furo 1.24.1 to use this feature  Read more about grpc streaming here
-Streaming big files to the client #  - md: &#39;Get:GET /files/{fid} google.protobuf.Empty , stream google.">
+Streaming big files to the client #  1 2 3  - md: &#39;Get:GET /files/{fid} google.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Streaming" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@ Streaming big files to the client #  - md: &#39;Get:GET /files/{fid} google.prot
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/docs/overview/streaming/index.xml" title="フロー FIDL" />
 <!--
 Made with Book Theme
@@ -556,17 +556,33 @@ https://github.com/alex-shpak/hugo-book
   Streaming big files to the client
   <a class="anchor" href="#streaming-big-files-to-the-client">#</a>
 </h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /files/{fid} google.protobuf.Empty , stream google.api.HttpBody</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns the raw file&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">qp</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">fid</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;string #The query param fid stands for the id of a file.&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>With google.api.HttpBody you can send any content to the client. Read more about 
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">md: &#39;Get</span>:<span style="color:#bbb"> </span>GET /files/{fid} google.protobuf.Empty , stream google.api.HttpBody<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Returns the raw file&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">qp</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">fid</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #The query param fid stands for the id of a file.&#39;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>With google.api.HttpBody you can send any content to the client. Read more about 
   <a href="https://github.com/googleapis/googleapis/blob/master/google/api/httpbody.proto">google.api.HttpBody here</a>.</p>
 <h4 id="stream-a-message-type">
   Stream a message type
   <a class="anchor" href="#stream-a-message-type">#</a>
 </h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#204a87;font-weight:bold">md: &#39;Get</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">GET /messagestream google.protobuf.Empty, stream message.Message</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">#Returns a stream of messages&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>You also can stream a message type to the client.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">md: &#39;Get</span>:<span style="color:#bbb"> </span>GET /messagestream google.protobuf.Empty, stream message.Message<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#Returns a stream of messages&#39;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>You also can stream a message type to the client.</p>
 <blockquote class="book-hint info">
   The response will be packed in a attribute &ldquo;result&rdquo;,
 </blockquote>
@@ -584,9 +600,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/75c8627fa3a8bb40d1af2fa0ed6fd21c77d438c4" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/d07a4aafd0216f6ee1b3564bb714ffc363ae9b2b" title='Last modified by veith | July 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 7, 2021</span>
+      <span>July 10, 2021</span>
     </a>
   </div>
 

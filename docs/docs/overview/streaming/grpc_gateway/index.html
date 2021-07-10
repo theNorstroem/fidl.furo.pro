@@ -6,19 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
 Example
-// import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&#34;application/x-ndjson&#34;, &amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.">
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  // import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Example" />
 <meta property="og:description" content="Example setup for grpc-gateway #  If you need newline delimited messages and raw streams, define a marhalerOption for the corresponding mimetype.
 Example
-// import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime.JSONPb{ MarshalOptions: protojson.MarshalOptions{ UseProtoNames: true, EmitUnpopulated: false, }, UnmarshalOptions: protojson.UnmarshalOptions{ DiscardUnknown: true, }, }, }), // send newline delimeted json if client sends the corresponding accept type 	gwruntime.WithMarshalerOption(&#34;application/x-ndjson&#34;, &amp;gwruntime.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime." />
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  // import gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;  // Do not send x-ndjson for gwruntime.MIMEWildcard (*) 	gwruntime.WithMarshalerOption(gwruntime.MIMEWildcard, &amp;marshaller.HTTPBodyMarshaler{ Marshaler: &amp;gwruntime." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.furo.pro/docs/overview/streaming/grpc_gateway/" />
-<meta property="article:modified_time" content="2021-07-07T16:56:54+02:00" />
+<meta property="article:modified_time" content="2021-07-10T17:55:56+02:00" />
 <title>Example | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.966d8ceb5ee6376c5ee67e63a985eab55f0bf8c16f7bc27fbd4069e2254956a9.css" integrity="sha256-lm2M617mN2xe5n5jqYXqtV8L&#43;MFve8J/vUBp4iVJVqk=">
-<script defer src="/en.search.min.1888113028918386fafb2ade57494f7fb73b9b760f80fd59f112d471540f5e22.js" integrity="sha256-GIgRMCiRg4b6&#43;yreV0lPf7c7m3YPgP1Z8RLUcVQPXiI="></script>
+<script defer src="/en.search.min.1e7bd1c0acdb9c56fb1cafe7d325b00d529054fb0667e8e629836f298c908bce.js" integrity="sha256-HnvRwKzbnFb7HK/n0yWwDVKQVPsGZ&#43;jmKYNvKYyQi84="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -536,77 +536,159 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>If you need newline delimited  messages and raw streams, define a marhalerOption for the corresponding mimetype.</p>
 <p><strong>Example</strong></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#8f5902;font-style:italic">// import 	gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;
-</span><span style="color:#8f5902;font-style:italic"></span>
-        <span style="color:#8f5902;font-style:italic">// Do not send  x-ndjson for gwruntime.MIMEWildcard (*)
-</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithMarshalerOption</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MIMEWildcard</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">marshaller</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">{</span>
-			<span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">JSONPb</span><span style="color:#000;font-weight:bold">{</span>
-				<span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
-					<span style="color:#000">UseProtoNames</span><span style="color:#000;font-weight:bold">:</span>   <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-					<span style="color:#000">EmitUnpopulated</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
-				<span style="color:#000;font-weight:bold">},</span>
-				<span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
-					<span style="color:#000">DiscardUnknown</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-				<span style="color:#000;font-weight:bold">},</span>
-			<span style="color:#000;font-weight:bold">},</span>
-		<span style="color:#000;font-weight:bold">}),</span>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#998;font-style:italic">// import 	gwruntime &#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;
+</span><span style="color:#998;font-style:italic"></span>
+        <span style="color:#998;font-style:italic">// Do not send  x-ndjson for gwruntime.MIMEWildcard (*)
+</span><span style="color:#998;font-style:italic"></span>		gwruntime.<span style="color:#900;font-weight:bold">WithMarshalerOption</span>(gwruntime.MIMEWildcard, <span style="color:#000;font-weight:bold">&amp;</span>marshaller.HTTPBodyMarshaler{
+			Marshaler: <span style="color:#000;font-weight:bold">&amp;</span>gwruntime.JSONPb{
+				MarshalOptions: protojson.MarshalOptions{
+					UseProtoNames:   <span style="color:#000;font-weight:bold">true</span>,
+					EmitUnpopulated: <span style="color:#000;font-weight:bold">false</span>,
+				},
+				UnmarshalOptions: protojson.UnmarshalOptions{
+					DiscardUnknown: <span style="color:#000;font-weight:bold">true</span>,
+				},
+			},
+		}),
         
-        <span style="color:#8f5902;font-style:italic">// send newline delimeted json if client sends the corresponding accept type
-</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithMarshalerOption</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;application/x-ndjson&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">{</span>
-			<span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">gwruntime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">JSONPb</span><span style="color:#000;font-weight:bold">{</span>
-				<span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
-					<span style="color:#000">UseProtoNames</span><span style="color:#000;font-weight:bold">:</span>   <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-					<span style="color:#000">EmitUnpopulated</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
-				<span style="color:#000;font-weight:bold">},</span>
-				<span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">protojson</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UnmarshalOptions</span><span style="color:#000;font-weight:bold">{</span>
-					<span style="color:#000">DiscardUnknown</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-				<span style="color:#000;font-weight:bold">},</span>
-			<span style="color:#000;font-weight:bold">},</span>
-		<span style="color:#000;font-weight:bold">}),</span>
-	<span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#998;font-style:italic">// send newline delimeted json if client sends the corresponding accept type
+</span><span style="color:#998;font-style:italic"></span>		gwruntime.<span style="color:#900;font-weight:bold">WithMarshalerOption</span>(<span style="color:#d14">&#34;application/x-ndjson&#34;</span>, <span style="color:#000;font-weight:bold">&amp;</span>gwruntime.HTTPBodyMarshaler{
+			Marshaler: <span style="color:#000;font-weight:bold">&amp;</span>gwruntime.JSONPb{
+				MarshalOptions: protojson.MarshalOptions{
+					UseProtoNames:   <span style="color:#000;font-weight:bold">true</span>,
+					EmitUnpopulated: <span style="color:#000;font-weight:bold">false</span>,
+				},
+				UnmarshalOptions: protojson.UnmarshalOptions{
+					DiscardUnknown: <span style="color:#000;font-weight:bold">true</span>,
+				},
+			},
+		}),
+	}
  
 
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-<span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">marshaller</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#000;font-weight:bold">package</span> marshaller
 
-<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
-	<span style="color:#4e9a06">&#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;</span>
-	<span style="color:#4e9a06">&#34;google.golang.org/genproto/googleapis/api/httpbody&#34;</span>
-<span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">import</span> (
+	<span style="color:#d14">&#34;github.com/grpc-ecosystem/grpc-gateway/v2/runtime&#34;</span>
+	<span style="color:#d14">&#34;google.golang.org/genproto/googleapis/api/httpbody&#34;</span>
+)
 
-<span style="color:#8f5902;font-style:italic">// HTTPBodyMarshaler is a Marshaler which supports marshaling of a
-</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message as the full response body if it is
-</span><span style="color:#8f5902;font-style:italic">// the actual message used as the response. If not, then this will
-</span><span style="color:#8f5902;font-style:italic">// simply fallback to the Marshaler specified as its default Marshaler.
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">HTTPBodyMarshaler</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">runtime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#998;font-style:italic">// HTTPBodyMarshaler is a Marshaler which supports marshaling of a
+</span><span style="color:#998;font-style:italic">// google.api.HttpBody message as the full response body if it is
+</span><span style="color:#998;font-style:italic">// the actual message used as the response. If not, then this will
+</span><span style="color:#998;font-style:italic">// simply fallback to the Marshaler specified as its default Marshaler.
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">type</span> HTTPBodyMarshaler <span style="color:#000;font-weight:bold">struct</span> {
+	runtime.Marshaler
+}
 
-<span style="color:#8f5902;font-style:italic">// ContentType returns its specified content type in case v is a
-</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message, otherwise it will fall back to the default Marshalers
-</span><span style="color:#8f5902;font-style:italic">// content type.
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">ContentType</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span> <span style="color:#204a87;font-weight:bold">interface</span><span style="color:#000;font-weight:bold">{})</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ok</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">v</span><span style="color:#000;font-weight:bold">.(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">httpbody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HttpBody</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000">ok</span> <span style="color:#000;font-weight:bold">{</span>
-		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">GetContentType</span><span style="color:#000;font-weight:bold">()</span>
-	<span style="color:#000;font-weight:bold">}</span>
-	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">h</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ContentType</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#998;font-style:italic">// ContentType returns its specified content type in case v is a
+</span><span style="color:#998;font-style:italic">// google.api.HttpBody message, otherwise it will fall back to the default Marshalers
+</span><span style="color:#998;font-style:italic">// content type.
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (h <span style="color:#000;font-weight:bold">*</span>HTTPBodyMarshaler) <span style="color:#900;font-weight:bold">ContentType</span>(v <span style="color:#000;font-weight:bold">interface</span>{}) <span style="color:#458;font-weight:bold">string</span> {
+	<span style="color:#000;font-weight:bold">if</span> httpBody, ok <span style="color:#000;font-weight:bold">:=</span> v.(<span style="color:#000;font-weight:bold">*</span>httpbody.HttpBody); ok {
+		<span style="color:#000;font-weight:bold">return</span> httpBody.<span style="color:#900;font-weight:bold">GetContentType</span>()
+	}
+	<span style="color:#000;font-weight:bold">return</span> h.Marshaler.<span style="color:#900;font-weight:bold">ContentType</span>(v)
+}
 
-<span style="color:#8f5902;font-style:italic">// Marshal marshals &#34;v&#34; by returning the body bytes if v is a
-</span><span style="color:#8f5902;font-style:italic">// google.api.HttpBody message, otherwise it falls back to the default Marshaler.
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Marshal</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span> <span style="color:#204a87;font-weight:bold">interface</span><span style="color:#000;font-weight:bold">{})</span> <span style="color:#000;font-weight:bold">([]</span><span style="color:#204a87;font-weight:bold">byte</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">error</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ok</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">v</span><span style="color:#000;font-weight:bold">.(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">httpbody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HttpBody</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000">ok</span> <span style="color:#000;font-weight:bold">{</span>
-		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">httpBody</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Data</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">nil</span>
-	<span style="color:#000;font-weight:bold">}</span>
-	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">h</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshaler</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Marshal</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">v</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#998;font-style:italic">// Marshal marshals &#34;v&#34; by returning the body bytes if v is a
+</span><span style="color:#998;font-style:italic">// google.api.HttpBody message, otherwise it falls back to the default Marshaler.
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (h <span style="color:#000;font-weight:bold">*</span>HTTPBodyMarshaler) <span style="color:#900;font-weight:bold">Marshal</span>(v <span style="color:#000;font-weight:bold">interface</span>{}) ([]<span style="color:#458;font-weight:bold">byte</span>, <span style="color:#458;font-weight:bold">error</span>) {
+	<span style="color:#000;font-weight:bold">if</span> httpBody, ok <span style="color:#000;font-weight:bold">:=</span> v.(<span style="color:#000;font-weight:bold">*</span>httpbody.HttpBody); ok {
+		<span style="color:#000;font-weight:bold">return</span> httpBody.Data, <span style="color:#000;font-weight:bold">nil</span>
+	}
+	<span style="color:#000;font-weight:bold">return</span> h.Marshaler.<span style="color:#900;font-weight:bold">Marshal</span>(v)
+}
 
-<span style="color:#8f5902;font-style:italic">// no Delimiter for httpbody
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">j</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">HTTPBodyMarshaler</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Delimiter</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">[]</span><span style="color:#204a87;font-weight:bold">byte</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">[]</span><span style="color:#204a87;font-weight:bold">byte</span><span style="color:#000;font-weight:bold">{}</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#998;font-style:italic">// no Delimiter for httpbody
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (j <span style="color:#000;font-weight:bold">*</span>HTTPBodyMarshaler) <span style="color:#900;font-weight:bold">Delimiter</span>() []<span style="color:#458;font-weight:bold">byte</span> {
+	<span style="color:#000;font-weight:bold">return</span> []<span style="color:#458;font-weight:bold">byte</span>{}
+}
 
-</code></pre></div></article>
+</code></pre></td></tr></table>
+</div>
+</div></article>
  
       
 
@@ -616,9 +698,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/75c8627fa3a8bb40d1af2fa0ed6fd21c77d438c4" title='Last modified by veith | July 7, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/d07a4aafd0216f6ee1b3564bb714ffc363ae9b2b" title='Last modified by veith | July 10, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>July 7, 2021</span>
+      <span>July 10, 2021</span>
     </a>
   </div>
 

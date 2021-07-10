@@ -85,7 +85,7 @@ The oneof feature is not available µSpec. You have to specify them in the spec.
       
       <guid>http://fidl.furo.pro/docs/overview/maps/</guid>
       <description>Maps #  If you want to create an associative map as part of your data definition, you can define them as a field type like any other type.
-The key of the map can only be a string.  in µSpec #  fields:properties:&amp;#39;map&amp;lt;string,furo.u33e.Property&amp;gt;:9 #Add properties you want to expose of reflect on your component.&amp;#39;in spec #  fields:properties:type:map&amp;lt;string,furo.u33e.Property&amp;gt;description:Add properties you want to expose of reflect on your component.</description>
+The key of the map can only be a string.  in µSpec #  1 2  fields:properties:&amp;#39;map&amp;lt;string,furo.u33e.Property&amp;gt;:9 #Add properties you want to expose of reflect on your component.&amp;#39;  in spec #  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  fields:properties:type:map&amp;lt;string,furo.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ The key of the map can only be a string.  in µSpec #  fields:properties:&amp;#3
       <guid>http://fidl.furo.pro/docs/overview/packages/</guid>
       <description>Packages #  Packages are not optional in FIDLs. Even when you are in the same µType file, you have to write at least the deepest package name to address another type from the same package.
 Packages in µType are defined in the type field. The package for the type below will be auth.
-- type:&amp;#39;auth.Credentials #Credentials type for login.&amp;#39;fields:password:&amp;#39;* string:1 #The password.&amp;#39;username:&amp;#39;* string:2 #The username or email, or something to identify.</description>
+1 2 3 4 5  - type:&amp;#39;auth.Credentials #Credentials type for login.&amp;#39;fields:password:&amp;#39;* string:1 #The password.&amp;#39;username:&amp;#39;* string:2 #The username or email, or something to identify.</description>
     </item>
     
     <item>

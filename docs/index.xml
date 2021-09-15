@@ -7,18 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://fidl.furo.pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>B E C</title>
-      <link>http://fidl.furo.pro/docs/tools/BEC/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://fidl.furo.pro/docs/tools/BEC/</guid>
-      <description>フロー furoBEC #  The furo build essentials container. #  This container contains all tools you need to work with a furo spec project.
-Usage #  Bash mode
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec # do your stuff # type exit to quit exit  Command mode
-docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build   TIPP: If your custom commands have to access different directories, do not forget to mount them.</description>
-    </item>
-    
-    <item>
       <title>Defining a Type</title>
       <link>http://fidl.furo.pro/docs/overview/define_type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

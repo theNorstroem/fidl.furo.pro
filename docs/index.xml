@@ -99,7 +99,9 @@ By using types which are not installed in the dependencies or not from your spec
       <guid>http://fidl.furo.pro/docs/overview/oneof/</guid>
       <description>Oneof #  If you have a message with many optional fields and where at most one field will be set at the same time.
 In the client lib, at most one field can be set at the same time. Setting any member of the oneof automatically clears all the other members.
-The oneof feature is not available µSpec. You have to specify them in the spec.  Using Oneof #  Just define a name for the oneof.</description>
+Using Oneof #  Just define a name for the oneof.
+field section of a type µSpec
+1 2 3 4  fields:method:&amp;#39;* string:1 [handler] #The name of the method to call with the wire data.</description>
     </item>
     
     <item>

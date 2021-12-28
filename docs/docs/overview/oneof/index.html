@@ -6,19 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Oneof #  If you have a message with many optional fields and where at most one field will be set at the same time.
 In the client lib, at most one field can be set at the same time. Setting any member of the oneof automatically clears all the other members.
-The oneof feature is not available µSpec. You have to specify them in the spec.  Using Oneof #  Just define a name for the oneof.">
+Using Oneof #  Just define a name for the oneof.
+field section of a type µSpec
+1 2 3 4  fields:method:&#39;* string:1 [handler] #The name of the method to call with the wire data.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Oneof" />
 <meta property="og:description" content="Oneof #  If you have a message with many optional fields and where at most one field will be set at the same time.
 In the client lib, at most one field can be set at the same time. Setting any member of the oneof automatically clears all the other members.
-The oneof feature is not available µSpec. You have to specify them in the spec.  Using Oneof #  Just define a name for the oneof." />
+Using Oneof #  Just define a name for the oneof.
+field section of a type µSpec
+1 2 3 4  fields:method:&#39;* string:1 [handler] #The name of the method to call with the wire data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.furo.pro/docs/overview/oneof/" />
-<meta property="article:modified_time" content="2021-09-15T10:09:13+02:00" />
+<meta property="article:modified_time" content="2021-12-28T08:12:21+01:00" />
 <title>Oneof | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.47d4e7722e4716d8c2e2bfd17a797d8cd137de6e36323ba071170893a9651ad8.js" integrity="sha256-R9Tnci5HFtjC4r/Renl9jNE33m42MjugcRcIk6llGtg="></script>
+<script defer src="/en.search.min.36dd31bfbf14959d5a8b5f6b8e64ef896f168d80362dd37f9d1dfd08c92942a5.js" integrity="sha256-Nt0xv78UlZ1ai19rjmTviW8WjYA2LdN/nR39CMkpQqU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -488,15 +492,27 @@ https://github.com/alex-shpak/hugo-book
 <p>If you have a message with many optional fields and where at most one field will be set at the same time.</p>
 <p>In the client lib, at most one field can be set at the same time.
 Setting any member of the oneof automatically clears all the other members.</p>
-<blockquote class="book-hint warning">
-  The oneof feature is <strong>not</strong> available <strong>µSpec</strong>. You have to specify them in the spec.
-</blockquote>
-
 <h2 id="using-oneof">
   Using Oneof
   <a class="anchor" href="#using-oneof">#</a>
 </h2>
 <p>Just define a name for the oneof.</p>
+<p><em>field section of a type µSpec</em></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080">fields</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">method</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;* string:1 [handler] #The name of the method to call with the wire data. If you want add custom code use source instead of method. /oneof:handler/&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">source</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;* string:2 [handler] #Anonyous method to handle the wire. Prefer the use of method. /oneof:handler/&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>field section of a type spec</em></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -580,6 +596,7 @@ Setting any member of the oneof automatically clears all the other members.</p>
 </span></code></pre></td></tr></table>
 </div>
 </div><p>The resulting proto would be like:</p>
+<p><em>proto</em></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -638,9 +655,9 @@ Setting any member of the oneof automatically clears all the other members.</p>
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/fb53fedbab675ad45b54352f4fe32ba9eb75657c" title='Last modified by veith | September 15, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/401d5b8ce0601718e5b8943aa4b34f3796d99f8e" title='Last modified by veith | December 28, 2021' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>September 15, 2021</span>
+      <span>December 28, 2021</span>
     </a>
   </div>
 

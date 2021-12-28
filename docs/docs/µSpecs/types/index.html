@@ -22,7 +22,7 @@ File: muspec/sample.types.yaml
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.47d4e7722e4716d8c2e2bfd17a797d8cd137de6e36323ba071170893a9651ad8.js" integrity="sha256-R9Tnci5HFtjC4r/Renl9jNE33m42MjugcRcIk6llGtg="></script>
+<script defer src="/en.search.min.36dd31bfbf14959d5a8b5f6b8e64ef896f168d80362dd37f9d1dfd08c92942a5.js" integrity="sha256-Nt0xv78UlZ1ai19rjmTviW8WjYA2LdN/nR39CMkpQqU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -471,21 +471,18 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#anatomy-of-a-type-µspec">Anatomy of a type µSpec</a>
       <ul>
-        <li><a href="#the-type-line">The type line</a>
-          <ul>
-            <li><a href="#type-name">type name</a></li>
-            <li><a href="#description">description</a></li>
-          </ul>
-        </li>
+        <li><a href="#the-type-line">The type line</a></li>
         <li><a href="#fields">Fields</a>
           <ul>
-            <li><a href="#fieldname">fieldname</a></li>
-            <li><a href="#indicator-required">indicator required</a></li>
-            <li><a href="#indicator-readonly">indicator readonly</a></li>
-            <li><a href="#indicator-repeated">indicator repeated</a></li>
-            <li><a href="#type">type</a></li>
-            <li><a href="#field-id">field id</a></li>
-            <li><a href="#description-1">description</a></li>
+            <li><a href="#fieldname">Fieldname</a></li>
+            <li><a href="#indicator-for-required">Indicator for required</a></li>
+            <li><a href="#indicator-for-readonly">Indicator for readonly</a></li>
+            <li><a href="#indicator-for-repeated">Indicator for repeated</a></li>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#field-id">Field id</a></li>
+            <li><a href="#default-value">Default value</a></li>
+            <li><a href="#oneof-definition">Oneof definition</a></li>
+            <li><a href="#description">Description</a></li>
           </ul>
         </li>
       </ul>
@@ -564,10 +561,10 @@ https://github.com/alex-shpak/hugo-book
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">type</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;sample.Sample  #A sample type&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>!___!  !___________!  !____________!<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>|          |             |<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>|      type name         |<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>|                        |<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>!___!  !____||_____!  !____________!<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |     |          |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |   type name    |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|    package             |<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>|                    description (recomended) begins with a<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>|                  <span style="color:#bbb">
 </span><span style="color:#bbb">    </span>| <span style="color:#bbb">
@@ -577,21 +574,13 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="type-name">
-  type name
-  <a class="anchor" href="#type-name">#</a>
-</h3>
-<p>is defined by package.Type</p>
-<h3 id="description">
-  description
-  <a class="anchor" href="#description">#</a>
-</h3>
-<p>It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.</p>
+</div><p>It is a good practice to give a good description of the type.</p>
 <h2 id="fields">
   Fields
   <a class="anchor" href="#fields">#</a>
 </h2>
 <p>In the &ldquo;fields-object&rdquo;, what a surprise, you define the fields / attributes of a type.</p>
+<p><em>minimalistic example</em></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -620,39 +609,83 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
+</div><p><em>example with default value and oneof</em></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">fieldname</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;* string:2 = default value [oneofname] #The description.&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>!_______!  !_!!____!!_!!______________!!__________!!________________!<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |    |   |          |            |              |   <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |    |   |          |   oneof definition in []  |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |    |   |    default value (=)                 |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |    |   |                                      |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |    |   |        description (recomended) begins with a<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#</span><span style="color:#bbb">
+</span><span style="color:#bbb"> </span>field name |    |   |   <span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#000080">|    |  field id, indicated by a </span>:<span style="color:#bbb">   
+</span><span style="color:#bbb">            </span>|    |  <span style="color:#bbb">
+</span><span style="color:#bbb">            </span>|   type  <span style="color:#bbb">
+</span><span style="color:#bbb">            </span>|     <span style="color:#bbb">
+</span><span style="color:#bbb">       </span>Indicator for required (*), readonly (-), repeated ([])<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
 </div><h3 id="fieldname">
-  fieldname
+  Fieldname
   <a class="anchor" href="#fieldname">#</a>
 </h3>
 <p>The name of the field</p>
-<h3 id="indicator-required">
-  indicator required
-  <a class="anchor" href="#indicator-required">#</a>
+<h3 id="indicator-for-required">
+  Indicator for required
+  <a class="anchor" href="#indicator-for-required">#</a>
 </h3>
 <p>If the field is required, type in a *</p>
-<h3 id="indicator-readonly">
-  indicator readonly
-  <a class="anchor" href="#indicator-readonly">#</a>
+<h3 id="indicator-for-readonly">
+  Indicator for readonly
+  <a class="anchor" href="#indicator-for-readonly">#</a>
 </h3>
 <p>If the field is readonly, type in a -</p>
-<h3 id="indicator-repeated">
-  indicator repeated
-  <a class="anchor" href="#indicator-repeated">#</a>
+<h3 id="indicator-for-repeated">
+  Indicator for repeated
+  <a class="anchor" href="#indicator-for-repeated">#</a>
 </h3>
 <p>If the field is repeated, type in a []</p>
 <h3 id="type">
-  type
+  Type
   <a class="anchor" href="#type">#</a>
 </h3>
 <p>Types are the same like in protobuf</p>
 <h3 id="field-id">
-  field id
+  Field id
   <a class="anchor" href="#field-id">#</a>
 </h3>
 <p>The field id must be unique, the generated protos use them too</p>
-<h3 id="description-1">
-  description
-  <a class="anchor" href="#description-1">#</a>
+<h3 id="default-value">
+  Default value
+  <a class="anchor" href="#default-value">#</a>
+</h3>
+<p>This does not reflect in the protos.</p>
+<h3 id="oneof-definition">
+  Oneof definition
+  <a class="anchor" href="#oneof-definition">#</a>
+</h3>
+<h3 id="description">
+  Description
+  <a class="anchor" href="#description">#</a>
 </h3>
 <p>It is a good practice to give a good description of the type. This description will go to the generated protos and other generates.</p>
 </article>
@@ -691,21 +724,18 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#anatomy-of-a-type-µspec">Anatomy of a type µSpec</a>
       <ul>
-        <li><a href="#the-type-line">The type line</a>
-          <ul>
-            <li><a href="#type-name">type name</a></li>
-            <li><a href="#description">description</a></li>
-          </ul>
-        </li>
+        <li><a href="#the-type-line">The type line</a></li>
         <li><a href="#fields">Fields</a>
           <ul>
-            <li><a href="#fieldname">fieldname</a></li>
-            <li><a href="#indicator-required">indicator required</a></li>
-            <li><a href="#indicator-readonly">indicator readonly</a></li>
-            <li><a href="#indicator-repeated">indicator repeated</a></li>
-            <li><a href="#type">type</a></li>
-            <li><a href="#field-id">field id</a></li>
-            <li><a href="#description-1">description</a></li>
+            <li><a href="#fieldname">Fieldname</a></li>
+            <li><a href="#indicator-for-required">Indicator for required</a></li>
+            <li><a href="#indicator-for-readonly">Indicator for readonly</a></li>
+            <li><a href="#indicator-for-repeated">Indicator for repeated</a></li>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#field-id">Field id</a></li>
+            <li><a href="#default-value">Default value</a></li>
+            <li><a href="#oneof-definition">Oneof definition</a></li>
+            <li><a href="#description">Description</a></li>
           </ul>
         </li>
       </ul>

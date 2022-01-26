@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anatomy of a type spec #  A type spec consists of 2 main sections (fields and __proto) and some properties on the root.
-name #  This property is deprecated. Fill in the same as you fill in on the property type for compatibility with some old generators.
-type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Types" />
-<meta property="og:description" content="Anatomy of a type spec #  A type spec consists of 2 main sections (fields and __proto) and some properties on the root.
-name #  This property is deprecated. Fill in the same as you fill in on the property type for compatibility with some old generators.
-type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning." />
+<meta name="description" content="Anatomy of a enum spec #  A type spec consists of 2 main sections (values and __proto) and some properties on the root.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.
+__proto #  The proto section defines some properties to generate the proto files.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  type:Corpusdescription:Description for a enum sample with aliaseslifecycle:null__proto:package:enumstargetfile:enums.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Enums" />
+<meta property="og:description" content="Anatomy of a enum spec #  A type spec consists of 2 main sections (values and __proto) and some properties on the root.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.
+__proto #  The proto section defines some properties to generate the proto files.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  type:Corpusdescription:Description for a enum sample with aliaseslifecycle:null__proto:package:enumstargetfile:enums." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://fidl.furo.pro/docs/specs/types/" />
+<meta property="og:url" content="http://fidl.furo.pro/docs/specs/enums/" />
 <meta property="article:modified_time" content="2022-01-26T15:57:47+01:00" />
-<title>Types | フロー FIDL</title>
+<title>Enums | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
@@ -380,7 +382,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://fidl.furo.pro/docs/specs/types/" class=" active">Types</a>
+    <a href="http://fidl.furo.pro/docs/specs/types/" class="">Types</a>
   
 
         </li>
@@ -406,7 +408,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://fidl.furo.pro/docs/specs/enums/" class="">Enums</a>
+    <a href="http://fidl.furo.pro/docs/specs/enums/" class=" active">Enums</a>
   
 
         </li>
@@ -476,7 +478,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Types</strong>
+  <strong>Enums</strong>
 
   <label for="toc-control">
     
@@ -491,9 +493,8 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a>
+    <li><a href="#anatomy-of-a-enum-spec">Anatomy of a enum spec</a>
       <ul>
-        <li><a href="#name">name</a></li>
         <li><a href="#type">type</a></li>
         <li><a href="#__proto">__proto</a>
           <ul>
@@ -526,16 +527,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="anatomy-of-a-type-spec">
-  Anatomy of a type spec
-  <a class="anchor" href="#anatomy-of-a-type-spec">#</a>
+  <article class="markdown"><h1 id="anatomy-of-a-enum-spec">
+  Anatomy of a enum spec
+  <a class="anchor" href="#anatomy-of-a-enum-spec">#</a>
 </h1>
-<p>A type spec consists of 2 main sections (fields and __proto) and some properties on the root.</p>
-<h2 id="name">
-  name
-  <a class="anchor" href="#name">#</a>
-</h2>
-<p>This property is deprecated. Fill in the same as you fill in on the property <code>type</code> for compatibility with some old generators.</p>
+<p>A type spec consists of 2 main sections (values and __proto) and some properties on the root.</p>
 <h2 id="type">
   type
   <a class="anchor" href="#type">#</a>
@@ -548,29 +544,50 @@ https://github.com/alex-shpak/hugo-book
 <p>The proto section defines some properties to generate the proto files.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">__proto</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>auth<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">targetfile</span>:<span style="color:#bbb"> </span>auth.proto<span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>Corpus<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Description for a enum sample with aliases<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">lifecycle</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">null</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">__proto</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>enums<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">targetfile</span>:<span style="color:#bbb"> </span>enums.proto<span style="color:#bbb">
 </span><span style="color:#bbb">    </span><span style="color:#000080">imports</span>:<span style="color:#bbb"> </span>[]<span style="color:#bbb">
 </span><span style="color:#bbb">    </span><span style="color:#000080">options</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/veith/doit-specs/dist/pb/auth;authpb<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/yourname/sample-specs/dist/pb/enums;enumspb<span style="color:#bbb">
 </span><span style="color:#bbb">        </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>AuthProto<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.furo.baseauth<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>Corpus.EnumProto<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.example.tutorial.enums<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">allow_alias</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">values</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">UNKNOWN</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">STARTED</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">RUNNING</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">COMPLETE</span>:<span style="color:#bbb"> </span><span style="color:#099">2</span><span style="color:#bbb">
+</span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="field-package-string">
+</div><p><em>sample.enum.spec</em></p>
+<h3 id="field-package-string">
   Field <code>package</code> <em>string</em>
   <a class="anchor" href="#field-package-string">#</a>
 </h3>
@@ -918,9 +935,8 @@ write it so. When your generator can handle your &ldquo;intention&rdquo; then a 
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#anatomy-of-a-type-spec">Anatomy of a type spec</a>
+    <li><a href="#anatomy-of-a-enum-spec">Anatomy of a enum spec</a>
       <ul>
-        <li><a href="#name">name</a></li>
         <li><a href="#type">type</a></li>
         <li><a href="#__proto">__proto</a>
           <ul>

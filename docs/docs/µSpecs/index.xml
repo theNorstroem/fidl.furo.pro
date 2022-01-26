@@ -31,5 +31,17 @@ You can have as many service definitions per file as you want. It makes sense th
 The field methods in µServcies will translate to services in the standard notation for compatibility reasons, because the standard notation is some years old and changing this would be a breaking change we do not want to do at the moment.</description>
     </item>
     
+    <item>
+      <title>Enums</title>
+      <link>http://fidl.furo.pro/docs/%C2%B5Specs/enums/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://fidl.furo.pro/docs/%C2%B5Specs/enums/</guid>
+      <description>Anatomy of a enum µSpec #  The µType specs are regular yaml files.
+The &amp;ldquo;enum-object&amp;rdquo; contains 4 fields. The fields enum, values are mandatory, the field target and alias are optional.
+You can have as many enum definitions per file as you want. It makes sense that you put enums in a file, that belongs togehter.
+It is not possible to mix enums and types in the same µSpec file at the moment.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -2,21 +2,25 @@
 <html lang="en" dir=>
 
 <head>
-	<meta name="generator" content="Hugo 0.78.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="フロー Furo FIDL, the **F**uro **I**nterface **D**efinition **L**anguage">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Introduction" />
-<meta property="og:description" content="フロー Furo FIDL, the **F**uro **I**nterface **D**efinition **L**anguage" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://fidl.furo.pro/" />
+<meta name="description" content="Anatomy of a enum µSpec #  The µType specs are regular yaml files.
+The &ldquo;enum-object&rdquo; contains 4 fields. The fields enum, values are mandatory, the field target and alias are optional.
+You can have as many enum definitions per file as you want. It makes sense that you put enums in a file, that belongs togehter.
+It is not possible to mix enums and types in the same µSpec file at the moment.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Enums" />
+<meta property="og:description" content="Anatomy of a enum µSpec #  The µType specs are regular yaml files.
+The &ldquo;enum-object&rdquo; contains 4 fields. The fields enum, values are mandatory, the field target and alias are optional.
+You can have as many enum definitions per file as you want. It makes sense that you put enums in a file, that belongs togehter.
+It is not possible to mix enums and types in the same µSpec file at the moment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://fidl.furo.pro/docs/%C2%B5Specs/enums/" />
 
-<title>Introduction | フロー FIDL</title>
+<title>Enums | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
 <script defer src="/en.search.min.7f3d6f9b52a3583a6e16df374bd1f27e34f8c21fc45158bd637e22aa46954765.js" integrity="sha256-fz1vm1KjWDpuFt83S9HyfjT4wh/EUVi9Y34iqkaVR2U="></script>
-<link rel="alternate" type="application/rss+xml" href="http://fidl.furo.pro/index.xml" title="フロー FIDL" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -300,7 +304,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-02a2f2578aa199d9ce0d19ad7b4e5ba3" class="toggle"  />
+    <input type="checkbox" id="section-02a2f2578aa199d9ce0d19ad7b4e5ba3" class="toggle" checked />
     <label for="section-02a2f2578aa199d9ce0d19ad7b4e5ba3" class="flex justify-between">
       <a href="http://fidl.furo.pro/docs/%C2%B5Specs/" class="">µSpecs</a>
       <span>▾</span>
@@ -343,7 +347,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="http://fidl.furo.pro/docs/%C2%B5Specs/enums/" class="">Enums</a>
+    <a href="http://fidl.furo.pro/docs/%C2%B5Specs/enums/" class=" active">Enums</a>
   
 
         </li>
@@ -474,29 +478,49 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Introduction</strong>
+  <strong>Enums</strong>
 
   <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#anatomy-of-a-enum-µspec">Anatomy of a enum µSpec</a>
+      <ul>
+        <li><a href="#the-enum-definition-line">The enum definition line</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#alias">Alias</a></li>
+        <li><a href="#target">Target</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
  
       </header>
 
       
       
-  <article class="markdown"><h1 id="フロー-furo-fidl">
-  フロー Furo FIDL
-  <a class="anchor" href="#%e3%83%95%e3%83%ad%e3%83%bc-furo-fidl">#</a>
+  <article class="markdown"><h1 id="anatomy-of-a-enum-µspec">
+  Anatomy of a enum µSpec
+  <a class="anchor" href="#anatomy-of-a-enum-%c2%b5spec">#</a>
 </h1>
-<p>The <strong>F</strong>uro <strong>I</strong>nterface <strong>D</strong>efinition <strong>L</strong>anguage</p>
-<div class="book-columns flex flex-wrap">
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="what-are-fidls">What are FIDLs?</h2>
+<p>The µType specs are regular yaml files.</p>
+<p>The &ldquo;enum-object&rdquo; contains 4 fields. The fields <code>enum</code>, <code>values</code> are mandatory, the field <code>target</code> and <code>alias</code> are optional.</p>
+<p>You can have as many enum definitions per file as you want. It makes sense that you put enums in a file, that belongs togehter.</p>
+<p>It is not possible to mix enums and types in the same µSpec file at the moment.</p>
+<p><em>File: muspec/sample.enums.yaml</em></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -509,25 +533,59 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#998;font-style:italic"># This is a µSpec for a type</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>- <span style="color:#000080">type</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;person.Client #A generic client.&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">fields</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">id</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;*string:1 # The id is required (*).&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">display_name</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;-string:2 # The display_name is readonly (-).&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">tags</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;[]string:3 # Define some tags ([])&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080">living_address</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;person.Adress:4 # The living address.&#39;</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">enum</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;helloworld.Corpus #Description for a enum sample with aliases&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">values</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">UNKNOWN</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">STARTED</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">RUNNING</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">COMPLETE</span>:<span style="color:#bbb"> </span><span style="color:#099">2</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">target</span>:<span style="color:#bbb"> </span>enums.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">alias</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is needed when you want to allow aliases</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>As you can see, the Corpus enum&rsquo;s first constant maps to zero:
+every enum definition must contain a constant that maps to zero as its first element.
+This is because for the compatibility with protobuf.</p>
+<h2 id="the-enum-definition-line">
+  The enum definition line
+  <a class="anchor" href="#the-enum-definition-line">#</a>
+</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">enum</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;sample.Corpus #Description for a enum sample with aliases&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>!___!  !____||_____! !__________________________________________!<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |     |          |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|       |   &#34;type&#34; name  |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|    package             |<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|                    description (recomended) begins with a<span style="color:#bbb"> </span><span style="color:#998;font-style:italic">#</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|                  <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>| <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>| <span style="color:#bbb">
+</span><span style="color:#bbb"></span>field name to declare a enum<span style="color:#bbb">
+</span><span style="color:#bbb">
 </span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><p>Furo IDL is a interface definition language with a lot of output formats.
-The outputs can vary from <a href="https://developers.google.com/protocol-buffers">protobuf</a>, UI components, open api, client code, server code,
-documentations and much more.
-There is a short notation form <a href="/docs/%C2%B5Specs/">(µSpecs)</a> and the standard notation form <a href="/docs/specs/">(specs)</a>. You can use the <strong>same</strong> defined types and services on servers and browsers.</p>
-
-  </div>
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="how-do-i-start">How do i start?</h2>
+</div><p>It is a good practice to give a good description.</p>
+<h2 id="values">
+  Values
+  <a class="anchor" href="#values">#</a>
+</h2>
+<p>In the &ldquo;values-object&rdquo;, you define the values of the enum.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -542,35 +600,30 @@ There is a short notation form <a href="/docs/%C2%B5Specs/">(µSpecs)</a> and th
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#998;font-style:italic"># This is a µSpec for a service</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Client<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;List clients&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>Services.clientservice<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">target</span>:<span style="color:#bbb"> </span>clientservice.proto<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080">services</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#000080">md: &#39;Create</span>:<span style="color:#bbb"> </span>POST /clients person.Client , person.ClientEntity<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Add a new client.&#39;      </span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>- <span style="color:#000080">md: &#39;Delete</span>:<span style="color:#bbb"> </span>DELETE /clients/{cid} google.protobuf.Empty, google.protobuf.Empty<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Delete a client&#39;</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span><span style="color:#000080">qp</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#000080">cid</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;string #The query param cid stands for client id.&#39;</span><span style="color:#bbb">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">values</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">UNKNOWN</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">STARTED</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>!_____! !_! <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|      |   <span style="color:#bbb">
+</span><span style="color:#bbb">    </span>|      |   <span style="color:#bbb">
+</span><span style="color:#bbb"> </span>constant  |    <span style="color:#bbb">
+</span><span style="color:#bbb">           </span>|     <span style="color:#bbb">
+</span><span style="color:#bbb">         </span>Value<span style="color:#bbb">
+</span><span style="color:#bbb">
 </span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>look at some example projects</li>
-<li>read the <a href="/docs/overview/">overview</a></li>
-</ul>
-
-  </div>
-  
-</div>
-
-<h2 id="why-are-there-two-spec-notation-formats">
-  Why are there two spec notation formats?
-  <a class="anchor" href="#why-are-there-two-spec-notation-formats">#</a>
+</div><h2 id="alias">
+  Alias
+  <a class="anchor" href="#alias">#</a>
 </h2>
-<p>The µ (micro) spec is ideal for rapid prototyping or simple APIs, Furo can translate them to regular
-specs and vice versa. They do not have any extension points and are as minimalistic as possible. The µSpecs have a lower information density then the regular specs.</p>
-<p>The regular specs are more expressive. You can also extend them with additional information, which you may need in a custom furoc generator to match your needs.</p>
-<p>When you already know protobuf, you will find some similarities in the specs.</p>
+<p>Alias is a boolean field to define if you want to allow aliases.</p>
+<p>
+  <a href="https://developers.google.com/protocol-buffers/docs/proto3#enum">Read more about aliases here.</a></p>
+<h2 id="target">
+  Target
+  <a class="anchor" href="#target">#</a>
+</h2>
+<p>In the field target, you can define the target proto file for the enum definition.</p>
 </article>
  
       
@@ -580,12 +633,6 @@ specs and vice versa. They do not have any extension points and are as minimalis
   <div class="flex flex-wrap justify-between">
 
 
-
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/a4d320aba10b8659fc1e9920c9ff91422cad3b19" title='Last modified by veith | January 26, 2022' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 26, 2022</span>
-    </a>
-  </div>
 
 
 
@@ -606,6 +653,24 @@ specs and vice versa. They do not have any extension points and are as minimalis
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#anatomy-of-a-enum-µspec">Anatomy of a enum µSpec</a>
+      <ul>
+        <li><a href="#the-enum-definition-line">The enum definition line</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#alias">Alias</a></li>
+        <li><a href="#target">Target</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
     
   </main>
 

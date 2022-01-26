@@ -4,17 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Enumerations #  Enums are not covered in furo at the moment.  ">
+<meta name="description" content="Enumerations #  Before you can use enums in muSpecs, make sure that you define the globs in your .furo file.
+1 2 3 4  muSpec:enums:# define a set of globs which matches your type definitions- &#34;./muspecs/**/*enums.yaml&#34;- &#34;./muspecs/*enums.yaml&#34;    If you want to use enums with grpc-gateway and the furo-web components, do not forget to set the MarshalOption UseEnumNumbers: true, .
+Read mor about customizing your gateway here.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Enumerations" />
-<meta property="og:description" content="Enumerations #  Enums are not covered in furo at the moment.  " />
+<meta property="og:description" content="Enumerations #  Before you can use enums in muSpecs, make sure that you define the globs in your .furo file.
+1 2 3 4  muSpec:enums:# define a set of globs which matches your type definitions- &#34;./muspecs/**/*enums.yaml&#34;- &#34;./muspecs/*enums.yaml&#34;    If you want to use enums with grpc-gateway and the furo-web components, do not forget to set the MarshalOption UseEnumNumbers: true, .
+Read mor about customizing your gateway here." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://fidl.furo.pro/docs/overview/enums/" />
-<meta property="article:modified_time" content="2021-12-28T10:43:21+01:00" />
+<meta property="article:modified_time" content="2022-01-26T15:57:47+01:00" />
 <title>Enumerations | フロー FIDL</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.d917efb76f69f2afa7b6886371b327a3f18051eaa11d48b3ffe6a21842c74412.css" integrity="sha256-2Rfvt29p8q&#43;ntohjcbMno/GAUeqhHUiz/&#43;aiGELHRBI=">
-<script defer src="/en.search.min.36dd31bfbf14959d5a8b5f6b8e64ef896f168d80362dd37f9d1dfd08c92942a5.js" integrity="sha256-Nt0xv78UlZ1ai19rjmTviW8WjYA2LdN/nR39CMkpQqU="></script>
+<script defer src="/en.search.min.7f3d6f9b52a3583a6e16df374bd1f27e34f8c21fc45158bd637e22aa46954765.js" integrity="sha256-fz1vm1KjWDpuFt83S9HyfjT4wh/EUVi9Y34iqkaVR2U="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -334,6 +338,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/%C2%B5Specs/enums/" class="">Enums</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -377,6 +394,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="http://fidl.furo.pro/docs/specs/services/" class="">Services</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://fidl.furo.pro/docs/specs/enums/" class="">Enums</a>
   
 
         </li>
@@ -461,7 +491,14 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#enumerations">Enumerations</a></li>
+    <li><a href="#enumerations">Enumerations</a>
+      <ul>
+        <li><a href="#define-enums-in-µspec">Define enums in µSpec</a></li>
+        <li><a href="#define-enums-in-specs">Define enums in specs</a></li>
+        <li><a href="#resulting-proto-file">Resulting proto file</a></li>
+        <li><a href="#enum-in-es6module-web-client">Enum in ES6Module (web client)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -478,9 +515,191 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#enumerations">#</a>
 </h1>
 <blockquote class="book-hint danger">
-  Enums are not covered in furo at the moment.
+  <p>Before you can use enums in muSpecs, make sure that you define the globs in your <code>.furo</code> file.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">muSpec</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">enums</span>:<span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># define a set of globs which matches your type definitions</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/**/*enums.yaml&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#d14">&#34;./muspecs/*enums.yaml&#34;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div>
 </blockquote>
 
+<blockquote class="book-hint warning">
+  <p>If you want to use enums with grpc-gateway and the furo-web components, do not forget to set the MarshalOption <code>UseEnumNumbers:  true,</code> .</p>
+<p><a href="https://grpc-ecosystem.github.io/grpc-gateway/docs/mapping/customizing_your_gateway/">Read mor about customizing your gateway here.</a></p>
+<p><code>customized marshaller</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">gwruntime.<span style="color:#900;font-weight:bold">WithMarshalerOption</span>(gwruntime.MIMEWildcard, <span style="color:#000;font-weight:bold">&amp;</span>marshaller.HTTPBodyMarshaler{
+			Marshaler: <span style="color:#000;font-weight:bold">&amp;</span>gwruntime.JSONPb{
+				MarshalOptions: protojson.MarshalOptions{
+					UseProtoNames:   <span style="color:#000;font-weight:bold">true</span>,
+					EmitUnpopulated: <span style="color:#000;font-weight:bold">false</span>,
+					UseEnumNumbers:  <span style="color:#000;font-weight:bold">true</span>,
+				},
+				UnmarshalOptions: protojson.UnmarshalOptions{
+					DiscardUnknown: <span style="color:#000;font-weight:bold">true</span>,
+				},
+			},
+		}),
+</code></pre></td></tr></table>
+</div>
+</div>
+</blockquote>
+
+<h2 id="define-enums-in-µspec">
+  Define enums in µSpec
+  <a class="anchor" href="#define-enums-in-%c2%b5spec">#</a>
+</h2>
+<p>You can define multiple enums in a µSpec enum file.</p>
+<p>It is possible to set the <code>target:</code> to a file which contains messages. It is not possible to mix them with service protos.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#000080">enum</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;helloworld.Corpus #Description for a enum sample with aliases&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">values</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">UNKNOWN</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">STARTED</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">RUNNING</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">COMPLETE</span>:<span style="color:#bbb"> </span><span style="color:#099">2</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">target</span>:<span style="color:#bbb"> </span>enums.proto<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">alias</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># this is needed when you want to allow aliases</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>sample.enums.yaml</em></p>
+<p>As you can see, the Corpus enum’s first constant maps to zero: every enum definition <strong>must</strong> contain a constant that maps to <strong>zero as its first element</strong>. This is needed for the compatibility with protobuf.</p>
+<h2 id="define-enums-in-specs">
+  Define enums in specs
+  <a class="anchor" href="#define-enums-in-specs">#</a>
+</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#000080">type</span>:<span style="color:#bbb"> </span>Corpus<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">description</span>:<span style="color:#bbb"> </span>Description for a enum sample with aliases<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">lifecycle</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">null</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">__proto</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">package</span>:<span style="color:#bbb"> </span>helloworld<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">targetfile</span>:<span style="color:#bbb"> </span>enums.proto<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">imports</span>:<span style="color:#bbb"> </span>[]<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">options</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">go_package</span>:<span style="color:#bbb"> </span>github.com/yourname/sample-specs/dist/pb/helloworld;helloworldpb<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">java_multiple_files</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#34;true&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">java_outer_classname</span>:<span style="color:#bbb"> </span>Corpus.EnumProto<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">java_package</span>:<span style="color:#bbb"> </span>com.example.tutorial.enums<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">allow_alias</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">values</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">UNKNOWN</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">STARTED</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">RUNNING</span>:<span style="color:#bbb"> </span><span style="color:#099">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">COMPLETE</span>:<span style="color:#bbb"> </span><span style="color:#099">2</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>sample.enum.spec</em></p>
+<h2 id="resulting-proto-file">
+  Resulting proto file
+  <a class="anchor" href="#resulting-proto-file">#</a>
+</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-protobuf" data-lang="protobuf"><span style="color:#998;font-style:italic">// Code generated by furo-proto-gen. DO NOT EDIT.
+</span><span style="color:#998;font-style:italic"></span>syntax <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;proto3&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">package</span> <span style="color:#555">helloworld</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">option</span> go_package <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;github.com/yourname/sample-specs/dist/pb/helloworld;helloworldpb&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">option</span> java_multiple_files <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">option</span> java_outer_classname <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;EnumsProto&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">option</span> java_package <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;com.example.tutorial.enums&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#998;font-style:italic">// Description for a enum sample with aliases
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">enum</span> Corpus {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  UNKNOWN <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  STARTED <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  RUNNING <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  COMPLETE <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#000;font-weight:bold">option</span> allow_alias <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><em>enum.proto</em></p>
+<h2 id="enum-in-es6module-web-client">
+  Enum in ES6Module (web client)
+  <a class="anchor" href="#enum-in-es6module-web-client">#</a>
+</h2>
+<p>Because js does not have enums,
+the fields with a enum type are generated as uint32 with an optionlist in the meta.
+The 
+  <a href="https://ui5.furo.pro/docs/components/furo-ui5-select/"><code>furo-ui5-select</code></a> component can handle this metas.</p>
 </article>
  
       
@@ -491,9 +710,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/67dbaf728e0460c36d3a2d1d2462dc452a649d97" title='Last modified by veith | December 28, 2021' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/eclipse/eclipsefuro/commit/a4d320aba10b8659fc1e9920c9ff91422cad3b19" title='Last modified by veith | January 26, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>December 28, 2021</span>
+      <span>January 26, 2022</span>
     </a>
   </div>
 
@@ -521,7 +740,14 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#enumerations">Enumerations</a></li>
+    <li><a href="#enumerations">Enumerations</a>
+      <ul>
+        <li><a href="#define-enums-in-µspec">Define enums in µSpec</a></li>
+        <li><a href="#define-enums-in-specs">Define enums in specs</a></li>
+        <li><a href="#resulting-proto-file">Resulting proto file</a></li>
+        <li><a href="#enum-in-es6module-web-client">Enum in ES6Module (web client)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

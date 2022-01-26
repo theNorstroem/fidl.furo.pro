@@ -28,5 +28,17 @@ name #  The type of the service without the package name. Follow the style guide
 version #  Put any version information of the service. This field does not affect the URL of the services/methods.</description>
     </item>
     
+    <item>
+      <title>Enums</title>
+      <link>http://fidl.furo.pro/docs/specs/enums/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://fidl.furo.pro/docs/specs/enums/</guid>
+      <description>Anatomy of a enum spec #  A type spec consists of 2 main sections (values and __proto) and some properties on the root.
+type #  The type of the field without the package name. Write it in CamelCase with a capital letter at the beginning.
+__proto #  The proto section defines some properties to generate the proto files.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  type:Corpusdescription:Description for a enum sample with aliaseslifecycle:null__proto:package:enumstargetfile:enums.</description>
+    </item>
+    
   </channel>
 </rss>
